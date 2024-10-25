@@ -1,0 +1,4 @@
+INFO     ShopVI:BasePage.py:55 Element found with locatorType 'xpath' and locatorValue '//android.widget.EditText[@text="Search for products,brands etc"]'
+INFO     ShopVI:BasePage.py:83 cleared the text field for element with locatorType 'xpath' and locatorValue '//android.widget.EditText[@text="Search for products,brands etc"]'
+INFO     ShopVI:BasePage.py:85 Sent text 'Zzz' to element with locatorType 'xpath' and locatorValue '//android.widget.EditText[@text="Search for products,brands etc"]'
+INFO     ShopVI:BasePage.py:177 Screenshot taken and saved at '../screenshot/028_Search Product_25_10_2024_18_38_10.png'

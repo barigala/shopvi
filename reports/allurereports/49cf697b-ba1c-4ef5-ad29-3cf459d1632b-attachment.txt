@@ -1,0 +1,3 @@
+INFO     ShopVI:BasePage.py:55 Element found with locatorType 'class' and locatorValue 'android.widget.EditText'
+INFO     ShopVI:BasePage.py:222 Expected text 'Zzz', found 'Zzz'
+INFO     ShopVI:Search.py:85 Verified that the field displays the expected text: 'Zzz'

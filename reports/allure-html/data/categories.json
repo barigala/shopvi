@@ -1,0 +1,25 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: Savings Banner not found",
+      "children" : [ {
+        "name" : "test_savingsBanner",
+        "uid" : "8103c51364fcf651",
+        "parentUid" : "ba04f2e2336dd22b1cc00bc73dd8e85a",
+        "status" : "failed",
+        "time" : {
+          "start" : 1729603822627,
+          "stop" : 1729603822793,
+          "duration" : 166
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "ba04f2e2336dd22b1cc00bc73dd8e85a"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

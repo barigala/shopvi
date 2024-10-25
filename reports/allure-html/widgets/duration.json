@@ -1,0 +1,191 @@
+[ {
+  "uid" : "c550f52dcd39fbc",
+  "name" : "test_myOrdersPage",
+  "time" : {
+    "start" : 1729603831738,
+    "stop" : 1729603837021,
+    "duration" : 5283
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "17be4953cc5dc025",
+  "name" : "test_NavPagesinAccountPage",
+  "time" : {
+    "start" : 1729603763451,
+    "stop" : 1729603816943,
+    "duration" : 53492
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2c469e691e275fad",
+  "name" : "test_shopDashboard",
+  "time" : {
+    "start" : 1729603726031,
+    "stop" : 1729603735903,
+    "duration" : 9872
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "900b8cb10f27f759",
+  "name" : "test_SavPaymentsPage",
+  "time" : {
+    "start" : 1729603816951,
+    "stop" : 1729603822614,
+    "duration" : 5663
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bb7bd6b63272e774",
+  "name" : "test_input_valid_mobile_number",
+  "time" : {
+    "start" : 1729603679447,
+    "stop" : 1729603700717,
+    "duration" : 21270
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8103c51364fcf651",
+  "name" : "test_savingsBanner",
+  "time" : {
+    "start" : 1729603822627,
+    "stop" : 1729603822793,
+    "duration" : 166
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "9724f9944a0382e0",
+  "name" : "test_MenuUnder_ShopDashboard",
+  "time" : {
+    "start" : 1729603747456,
+    "stop" : 1729603754774,
+    "duration" : 7318
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c310421aa1bcd684",
+  "name" : "test_input_otp",
+  "time" : {
+    "start" : 1729603701888,
+    "stop" : 1729603711717,
+    "duration" : 9829
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d755162fa525e411",
+  "name" : "test_CouponsPage",
+  "time" : {
+    "start" : 1729603842748,
+    "stop" : 1729603847982,
+    "duration" : 5234
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1f2c9742532ddbab",
+  "name" : "test_ExplorePage",
+  "time" : {
+    "start" : 1729603743683,
+    "stop" : 1729603747439,
+    "duration" : 3756
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a997f8f79244201b",
+  "name" : "test_DealsPage",
+  "time" : {
+    "start" : 1729603735913,
+    "stop" : 1729603743672,
+    "duration" : 7759
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b607d776d92d2d4a",
+  "name" : "test_click_dialog_box",
+  "time" : {
+    "start" : 1729603678262,
+    "stop" : 1729603679438,
+    "duration" : 1176
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "542d34b8959ab9de",
+  "name" : "test_CCPage",
+  "time" : {
+    "start" : 1729603837041,
+    "stop" : 1729603842737,
+    "duration" : 5696
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3f0ba4d47892853f",
+  "name" : "test_nav_to_shop",
+  "time" : {
+    "start" : 1729603713420,
+    "stop" : 1729603726010,
+    "duration" : 12590
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7b617d7c7071f6ab",
+  "name" : "test_click_number_input_field",
+  "time" : {
+    "start" : 1729603661469,
+    "stop" : 1729603678241,
+    "duration" : 16772
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f719e378a6cbac53",
+  "name" : "test_click_login_w_otp_button",
+  "time" : {
+    "start" : 1729603711727,
+    "stop" : 1729603713411,
+    "duration" : 1684
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bc96e4616879a3",
+  "name" : "test_click_otp_button",
+  "time" : {
+    "start" : 1729603700726,
+    "stop" : 1729603701878,
+    "duration" : 1152
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9bc209274de16f0e",
+  "name" : "test_FAQPage",
+  "time" : {
+    "start" : 1729603822876,
+    "stop" : 1729603831727,
+    "duration" : 8851
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c0bade82f373953a",
+  "name" : "test_AccountsPage",
+  "time" : {
+    "start" : 1729603754782,
+    "stop" : 1729603763442,
+    "duration" : 8660
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

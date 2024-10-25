@@ -1,0 +1,10 @@
+Before Method
+TC15: Verify Profile page
+Profile Page Title: True
+Profile Page Back Button: True
+Profile Page Text: True
+Profile Page Save Button: True
+Profile Picture: True
+Profile Page Mobile Number Field: True
+Profile Page Email ID Field: True
+After Method

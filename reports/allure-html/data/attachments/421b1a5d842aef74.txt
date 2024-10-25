@@ -1,0 +1,11 @@
+Before Method
+TC2: All available elements on shop dashboard
+Vi Home Button: False
+Deals: True
+Explore: True
+My Orders: True
+Vi Home: True
+Accounts: True
+Search Icon: True
+Cart Icon: True
+After Method

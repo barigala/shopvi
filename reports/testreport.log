@@ -1,0 +1,7 @@
+2024-10-25 20:12:49,942 - ERROR - Failed to wait for element with locatorType 'text' and locatorValue 'enter mobile number'. Error: 'Context' object has no attribute 'find_element'
+2024-10-25 20:12:49,942 - ERROR - Failed to take screenshot. Error: 'Context' object has no attribute 'save_screenshot'
+2024-10-25 20:12:49,942 - ERROR - Failed to wait for element with locatorType 'text' and locatorValue 'enter mobile number'. Error: 'Context' object has no attribute 'find_element'
+2024-10-25 20:12:49,943 - ERROR - Failed to take screenshot. Error: 'Context' object has no attribute 'save_screenshot'
+2024-10-25 20:12:49,943 - INFO - Element found with locatorType 'text' and locatorValue 'enter mobile number'
+2024-10-25 20:12:49,943 - ERROR - Failed to click element with locatorType 'text' and locatorValue 'enter mobile number'. Error: Element not found
+2024-10-25 20:12:49,943 - ERROR - Failed to take screenshot. Error: 'Context' object has no attribute 'save_screenshot'

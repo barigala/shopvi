@@ -1,0 +1,7 @@
+Before Method
+TC13: Verify Credit Card page
+CC Page Title: True
+CC Page Back Arrow: True
+CC Page Search Icon: False
+CC Page Resume Application: True
+After Method

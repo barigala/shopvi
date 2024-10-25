@@ -1,0 +1,3 @@
+Before Method
+TC8: Verify the navigation to credit cards page
+After Method

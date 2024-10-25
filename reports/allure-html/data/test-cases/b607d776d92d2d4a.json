@@ -1,0 +1,254 @@
+{
+  "uid" : "b607d776d92d2d4a",
+  "name" : "test_click_dialog_box",
+  "fullName" : "tests.TestSuite.ShopTest#test_click_dialog_box",
+  "historyId" : "a75d4931f2d69332c4bdf53153061303",
+  "time" : {
+    "start" : 1729603678262,
+    "stop" : 1729603679438,
+    "duration" : 1176
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ {
+    "name" : "beforeMethod",
+    "time" : {
+      "start" : 1729603678262,
+      "stop" : 1729603678262,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_unittest_setUpClass_fixture_ShopTest",
+    "time" : {
+      "start" : 1729603650341,
+      "stop" : 1729603650341,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "classObjects",
+    "time" : {
+      "start" : 1729603678261,
+      "stop" : 1729603678261,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "beforeClass",
+    "time" : {
+      "start" : 1729603650341,
+      "stop" : 1729603661450,
+      "duration" : 11109
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Click on dialog box if present",
+      "time" : {
+        "start" : 1729603678262,
+        "stop" : 1729603679438,
+        "duration" : 1176
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Dialog box clicked",
+        "time" : {
+          "start" : 1729603678262,
+          "stop" : 1729603678262,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "Clicked on Dialog Box",
+        "time" : {
+          "start" : 1729603678577,
+          "stop" : 1729603678577,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "Dialog box clicked successfully",
+        "time" : {
+          "start" : 1729603679438,
+          "stop" : 1729603679438,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ {
+        "uid" : "a632acf6f7756899",
+        "name" : "Clicked on Dialog Box",
+        "source" : "a632acf6f7756899.png",
+        "type" : "image/png",
+        "size" : 99126
+      } ],
+      "parameters" : [ ],
+      "hasContent" : true,
+      "stepsCount" : 3,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "49bcfb67b4bbd8d",
+      "name" : "log",
+      "source" : "49bcfb67b4bbd8d.txt",
+      "type" : "text/plain",
+      "size" : 341
+    }, {
+      "uid" : "96a042752453d92c",
+      "name" : "stdout",
+      "source" : "96a042752453d92c.txt",
+      "type" : "text/plain",
+      "size" : 61
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 4,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "beforeMethod::0",
+    "time" : {
+      "start" : 1729603679438,
+      "stop" : 1729603679439,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_unittest_setUpClass_fixture_ShopTest::0",
+    "time" : {
+      "start" : 1729603853403,
+      "stop" : 1729603853403,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "beforeClass::0",
+    "time" : {
+      "start" : 1729603847987,
+      "stop" : 1729603853402,
+      "duration" : 5415
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "run(order=2)"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('beforeClass', 'beforeMethod')"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "TestSuite"
+  }, {
+    "name" : "subSuite",
+    "value" : "ShopTest"
+  }, {
+    "name" : "host",
+    "value" : "SunilBarigala"
+  }, {
+    "name" : "thread",
+    "value" : "29108-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.TestSuite"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "run(order=2)", "@pytest.mark.usefixtures('beforeClass', 'beforeMethod')" ]
+  },
+  "source" : "b607d776d92d2d4a.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,3 @@
+INFO     ShopVI:BasePage.py:54 Element found with locatorType 'text' and locatorValue 'enter mobile number'
+INFO     ShopVI:BasePage.py:67 Clicked element with locatorType 'text' and locatorValue 'enter mobile number'
+INFO     ShopVI:BasePage.py:175 Screenshot taken and saved at '../screenshot/001_Clicked on Mobile Number Input Field_22_10_2024_18_57_56.png'

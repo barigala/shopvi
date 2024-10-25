@@ -1,0 +1,5 @@
+Cleaning Allure logs...
+Before Class
+Before Method
+Now Running test_click_number_input_field
+After Method

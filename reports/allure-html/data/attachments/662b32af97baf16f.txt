@@ -1,0 +1,14 @@
+Before Method
+TC14: Verify Coupons page
+Coupons Page Title: True
+Coupons Page Back Arrow: True
+Coupons Page Coupons not available Text: True
+Coupons Page Coupons Not Available Texts Description: True
+Coupons Page Explore our Stores Text: True
+Coupons Page Explore our Stores Filter 1: True
+Coupons Page Explore our Stores Filter 2: True
+Coupons Page Explore our Stores Filter 3: True
+Coupons Page Explore our Stores Filter 4: True
+Coupons Page Explore our Stores Filter 5: True
+After Method
+After Class

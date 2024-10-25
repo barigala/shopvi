@@ -1,0 +1,3 @@
+INFO     ShopVI:BasePage.py:55 Element found with locatorType 'xpath' and locatorValue '//android.widget.TextView[@text="your orders"]'
+INFO     ShopVI:BasePage.py:68 Clicked element with locatorType 'xpath' and locatorValue '//android.widget.TextView[@text="your orders"]'
+INFO     ShopVI:BasePage.py:177 Screenshot taken and saved at '../screenshot/023_Navigataed to My Orders_25_10_2024_18_37_40.png'

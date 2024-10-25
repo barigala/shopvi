@@ -1,0 +1,239 @@
+{
+  "uid" : "542d34b8959ab9de",
+  "name" : "test_CCPage",
+  "fullName" : "tests.TestSuite.ShopTest#test_CCPage",
+  "historyId" : "67f91b0cc5b8bc1049160018ceac98cc",
+  "time" : {
+    "start" : 1729603837041,
+    "stop" : 1729603842737,
+    "duration" : 5696
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ {
+    "name" : "classObjects",
+    "time" : {
+      "start" : 1729603837040,
+      "stop" : 1729603837040,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "beforeMethod",
+    "time" : {
+      "start" : 1729603837040,
+      "stop" : 1729603837040,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_unittest_setUpClass_fixture_ShopTest",
+    "time" : {
+      "start" : 1729603650341,
+      "stop" : 1729603650341,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "beforeClass",
+    "time" : {
+      "start" : 1729603650341,
+      "stop" : 1729603661450,
+      "duration" : 11109
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Verifying Credit Card page",
+      "time" : {
+        "start" : 1729603837041,
+        "stop" : 1729603837041,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Clicked on Credit Cards",
+      "time" : {
+        "start" : 1729603840685,
+        "stop" : 1729603840685,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Succesfully Validated Credit Card Page",
+      "time" : {
+        "start" : 1729603842736,
+        "stop" : 1729603842736,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "b4974b5d04ceba5d",
+      "name" : "Navigated to Credit Cards",
+      "source" : "b4974b5d04ceba5d.png",
+      "type" : "image/png",
+      "size" : 166565
+    }, {
+      "uid" : "cc415b834b96179c",
+      "name" : "log",
+      "source" : "cc415b834b96179c.txt",
+      "type" : "text/plain",
+      "size" : 407
+    }, {
+      "uid" : "36d3d6eb74a95558",
+      "name" : "stdout",
+      "source" : "36d3d6eb74a95558.txt",
+      "type" : "text/plain",
+      "size" : 162
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 3,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "beforeMethod::0",
+    "time" : {
+      "start" : 1729603842738,
+      "stop" : 1729603842738,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "_unittest_setUpClass_fixture_ShopTest::0",
+    "time" : {
+      "start" : 1729603853403,
+      "stop" : 1729603853403,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "beforeClass::0",
+    "time" : {
+      "start" : 1729603847987,
+      "stop" : 1729603853402,
+      "duration" : 5415
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "run(order=19)"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('beforeClass', 'beforeMethod')"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "TestSuite"
+  }, {
+    "name" : "subSuite",
+    "value" : "ShopTest"
+  }, {
+    "name" : "host",
+    "value" : "SunilBarigala"
+  }, {
+    "name" : "thread",
+    "value" : "29108-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.TestSuite"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "run(order=19)", "@pytest.mark.usefixtures('beforeClass', 'beforeMethod')" ]
+  },
+  "source" : "542d34b8959ab9de.json",
+  "parameterValues" : [ ]
+}

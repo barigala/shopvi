@@ -1,0 +1,3 @@
+INFO     ShopVI:BasePage.py:54 Element found with locatorType 'xpath' and locatorValue '//android.widget.TextView[@text="explore"]'
+INFO     ShopVI:BasePage.py:67 Clicked element with locatorType 'xpath' and locatorValue '//android.widget.TextView[@text="explore"]'
+INFO     ShopVI:BasePage.py:175 Screenshot taken and saved at '../screenshot/009_Navigated to Explore Page_22_10_2024_18_59_05.png'

@@ -1,0 +1,7 @@
+Before Method
+Now Running test_Verifytheelementsaftersearch
+No Results Found Back Button: True
+No Results Found Text: True
+No Results Found Icon: True
+After Method
+After Class

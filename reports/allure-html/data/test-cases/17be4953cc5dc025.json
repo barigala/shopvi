@@ -1,0 +1,392 @@
+{
+  "uid" : "17be4953cc5dc025",
+  "name" : "test_NavPagesinAccountPage",
+  "fullName" : "tests.TestSuite.ShopTest#test_NavPagesinAccountPage",
+  "historyId" : "6822f46acd79d630fd60a4122cefe286",
+  "time" : {
+    "start" : 1729603763451,
+    "stop" : 1729603816943,
+    "duration" : 53492
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ {
+    "name" : "_unittest_setUpClass_fixture_ShopTest",
+    "time" : {
+      "start" : 1729603650341,
+      "stop" : 1729603650341,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "beforeMethod",
+    "time" : {
+      "start" : 1729603763451,
+      "stop" : 1729603763451,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "classObjects",
+    "time" : {
+      "start" : 1729603763451,
+      "stop" : 1729603763451,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "beforeClass",
+    "time" : {
+      "start" : 1729603650341,
+      "stop" : 1729603661450,
+      "duration" : 11109
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Navigation across sections inside Accounts Page",
+      "time" : {
+        "start" : 1729603763451,
+        "stop" : 1729603763452,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Clicked on Credit Cards",
+      "time" : {
+        "start" : 1729603765692,
+        "stop" : 1729603765692,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Clicked on Coupons",
+      "time" : {
+        "start" : 1729603771191,
+        "stop" : 1729603771191,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Clicked on My Orders",
+      "time" : {
+        "start" : 1729603776866,
+        "stop" : 1729603776866,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Clicked on Saved Payments",
+      "time" : {
+        "start" : 1729603782698,
+        "stop" : 1729603782698,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Clicked on Help & Support",
+      "time" : {
+        "start" : 1729603788361,
+        "stop" : 1729603788361,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Clicked on FAQ",
+      "time" : {
+        "start" : 1729603794514,
+        "stop" : 1729603794514,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Clicked on Terms & Conditions",
+      "time" : {
+        "start" : 1729603800511,
+        "stop" : 1729603800512,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Clicked on Privacy Policy",
+      "time" : {
+        "start" : 1729603806790,
+        "stop" : 1729603806790,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Clicked on About Us",
+      "time" : {
+        "start" : 1729603813352,
+        "stop" : 1729603813352,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "7176d7e0b96fc9b7",
+      "name" : "Navigated to Credit Cards",
+      "source" : "7176d7e0b96fc9b7.png",
+      "type" : "image/png",
+      "size" : 166271
+    }, {
+      "uid" : "8e017dd931876375",
+      "name" : "Navigated to Coupons",
+      "source" : "8e017dd931876375.png",
+      "type" : "image/png",
+      "size" : 221561
+    }, {
+      "uid" : "eb4e16bf5111cab2",
+      "name" : "Navigataed to My Orders",
+      "source" : "eb4e16bf5111cab2.png",
+      "type" : "image/png",
+      "size" : 232083
+    }, {
+      "uid" : "7d0974ce599fa8e7",
+      "name" : "Navigated to Saved Payments",
+      "source" : "7d0974ce599fa8e7.png",
+      "type" : "image/png",
+      "size" : 152300
+    }, {
+      "uid" : "8491731db4b5a313",
+      "name" : "Navigated to Help & Support",
+      "source" : "8491731db4b5a313.png",
+      "type" : "image/png",
+      "size" : 685947
+    }, {
+      "uid" : "89cae02a6405af98",
+      "name" : "Navigated to FAQ",
+      "source" : "89cae02a6405af98.png",
+      "type" : "image/png",
+      "size" : 253244
+    }, {
+      "uid" : "4a49bf03c49e1a76",
+      "name" : "Navigated to Terms & Conditions",
+      "source" : "4a49bf03c49e1a76.png",
+      "type" : "image/png",
+      "size" : 789787
+    }, {
+      "uid" : "d4aadc5756f2aba0",
+      "name" : "Navigated to Privacy Policy",
+      "source" : "d4aadc5756f2aba0.png",
+      "type" : "image/png",
+      "size" : 574199
+    }, {
+      "uid" : "a487000187bc4b0a",
+      "name" : "Navigated to About Us",
+      "source" : "a487000187bc4b0a.png",
+      "type" : "image/png",
+      "size" : 992352
+    }, {
+      "uid" : "4264016facd2d0df",
+      "name" : "log",
+      "source" : "4264016facd2d0df.txt",
+      "type" : "text/plain",
+      "size" : 3651
+    }, {
+      "uid" : "cb0a67cd3a42d92a",
+      "name" : "stdout",
+      "source" : "cb0a67cd3a42d92a.txt",
+      "type" : "text/plain",
+      "size" : 75
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 10,
+    "attachmentsCount" : 11,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "_unittest_setUpClass_fixture_ShopTest::0",
+    "time" : {
+      "start" : 1729603853403,
+      "stop" : 1729603853403,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "beforeMethod::0",
+    "time" : {
+      "start" : 1729603816944,
+      "stop" : 1729603816944,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "beforeClass::0",
+    "time" : {
+      "start" : 1729603847987,
+      "stop" : 1729603853402,
+      "duration" : 5415
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "run(order=14)"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.usefixtures('beforeClass', 'beforeMethod')"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "TestSuite"
+  }, {
+    "name" : "subSuite",
+    "value" : "ShopTest"
+  }, {
+    "name" : "host",
+    "value" : "SunilBarigala"
+  }, {
+    "name" : "thread",
+    "value" : "29108-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.TestSuite"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "@pytest.mark.usefixtures('beforeClass', 'beforeMethod')", "run(order=14)" ]
+  },
+  "source" : "17be4953cc5dc025.json",
+  "parameterValues" : [ ]
+}

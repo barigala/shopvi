@@ -1,0 +1,3 @@
+INFO     ShopVI:BasePage.py:55 Element found with locatorType 'xpath' and locatorValue '//android.view.ViewGroup[@content-desc="DS_SHOPshop-account-icon.webp"]'
+INFO     ShopVI:BasePage.py:68 Clicked element with locatorType 'xpath' and locatorValue '//android.view.ViewGroup[@content-desc="DS_SHOPshop-account-icon.webp"]'
+INFO     ShopVI:BasePage.py:177 Screenshot taken and saved at '../screenshot/011_Clicked on Account Button_25_10_2024_18_36_27.png'

@@ -1,0 +1,17 @@
+INFO     ShopVI:BasePage.py:55 Element found with locatorType 'xpath' and locatorValue '(//android.widget.TextView[@text="1"])[2]'
+INFO     ShopVI:BasePage.py:68 Clicked element with locatorType 'xpath' and locatorValue '(//android.widget.TextView[@text="1"])[2]'
+INFO     ShopVI:BasePage.py:137 Clicked OTP button with digit '1'
+INFO     ShopVI:BasePage.py:150 Successfully sent OTP '1' via keypad
+INFO     ShopVI:BasePage.py:55 Element found with locatorType 'xpath' and locatorValue '(//android.widget.TextView[@text="2"])[2]'
+INFO     ShopVI:BasePage.py:68 Clicked element with locatorType 'xpath' and locatorValue '(//android.widget.TextView[@text="2"])[2]'
+INFO     ShopVI:BasePage.py:137 Clicked OTP button with digit '2'
+INFO     ShopVI:BasePage.py:150 Successfully sent OTP '2' via keypad
+INFO     ShopVI:BasePage.py:55 Element found with locatorType 'xpath' and locatorValue '(//android.widget.TextView[@text="3"])[2]'
+INFO     ShopVI:BasePage.py:68 Clicked element with locatorType 'xpath' and locatorValue '(//android.widget.TextView[@text="3"])[2]'
+INFO     ShopVI:BasePage.py:137 Clicked OTP button with digit '3'
+INFO     ShopVI:BasePage.py:150 Successfully sent OTP '3' via keypad
+INFO     ShopVI:BasePage.py:55 Element found with locatorType 'xpath' and locatorValue '(//android.widget.TextView[@text="4"])[2]'
+INFO     ShopVI:BasePage.py:68 Clicked element with locatorType 'xpath' and locatorValue '(//android.widget.TextView[@text="4"])[2]'
+INFO     ShopVI:BasePage.py:137 Clicked OTP button with digit '4'
+INFO     ShopVI:BasePage.py:150 Successfully sent OTP '4' via keypad
+INFO     ShopVI:BasePage.py:177 Screenshot taken and saved at '../screenshot/005_Entered OTP Number_25_10_2024_18_35_40.png'

@@ -1,0 +1,19 @@
+Before Method
+TC11: Verify FAQ page
+FAQ Page Title: True
+FAQ Page Search Box: True
+FAQ Page All Filter Option: False
+FAQ Page Account Filter Option: False
+FAQ Page Cancellation Filter Option: False
+FAQ Page Refund Filter Option: False
+FAQ Q1: True
+FAQ Q2: True
+FAQ Q3: True
+FAQ Q4: True
+FAQ Q5: True
+FAQ Q6: True
+FAQ Q7: True
+FAQ Q8: True
+FAQ Q9: True
+FAQ Q10: True
+After Method

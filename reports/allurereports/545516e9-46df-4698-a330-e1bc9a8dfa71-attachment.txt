@@ -1,0 +1,6 @@
+Before Method
+TC4: Verify the navigation and all the elements present in Explore Page
+Explore Page Title: True
+Explore Search Icon: True
+Explore Cart Icon: True
+After Method

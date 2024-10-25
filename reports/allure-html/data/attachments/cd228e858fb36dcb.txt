@@ -1,0 +1,3 @@
+INFO     ShopVI:BasePage.py:54 Element found with locatorType 'xpath' and locatorValue '//android.widget.TextView[@text="FAQs"]'
+INFO     ShopVI:BasePage.py:67 Clicked element with locatorType 'xpath' and locatorValue '//android.widget.TextView[@text="FAQs"]'
+INFO     ShopVI:BasePage.py:175 Screenshot taken and saved at '../screenshot/022_Navigated to FAQ_22_10_2024_19_00_26.png'
