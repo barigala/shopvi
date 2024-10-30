@@ -53,7 +53,7 @@ class NavtoShop(BasePage):
 
     def inputOTP(self, OTP_number):
         """
-        This method validates the mobile number length and inputs the 10-digit mobile number using the sendNumberViaKeypad method.
+        This method validates the mobile number length and inputs the 4-digit OTP number using the sendNumberViaKeypad method.
         """
         if len(OTP_number) == 4 and OTP_number.isdigit():
             cl.allureLogs(f"Entering 4-digit OTP number: {OTP_number}")
@@ -66,8 +66,8 @@ class NavtoShop(BasePage):
             cl.allureLogs("OTP number input completed")
             self.takeScreenshot("Entered OTP Number")
         else:
-            cl.allureLogs(f"Invalid mobile number: {OTP_number}. Please enter a valid 4-digit number.")
-            raise ValueError("Mobile number must be exactly 4 digits and numeric.")
+            cl.allureLogs(f"Invalid OTP number: {OTP_number}. Please enter a valid 4-digit number.")
+            raise ValueError("OTP number must be exactly 4 digits and numeric.")
 
     def LoginWOTPButton(self):
         self.clickElement(self._inputOTP, "text")

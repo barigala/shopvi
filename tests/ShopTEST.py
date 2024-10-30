@@ -185,7 +185,8 @@ class ShopTest(unittest.TestCase):
         print("TC12: Verify My Orders page")
         cl.allureLogs("Verifying My Orders page")
         self.account_page.NavOrders()
-        self.account_page.VerifyandPrint_allElements_under_myOrderspage()
+        self.account_page.VerifyandPrint_allElements_under_myOrderspage1()
+        self.account_page.VerifyandPrint_allElements_under_myOrderspage2()
         self.driver.press_keycode(4)
         cl.allureLogs("Succesfully Validated My Orders Page")
 
@@ -212,8 +213,8 @@ class ShopTest(unittest.TestCase):
         print("TC15: Verify Profile page")
         cl.allureLogs("Verifying Profile page")
         self.account_page.NavProfilePage()
-        self.account_page.VerifyandPrintallElements_underProfilePage()
-        self.account_page.VerifyandPrint_allElements_under_ProfilePage()
+        self.account_page.VerifyandPrintallElements_underProfilePage1()
+        self.account_page.VerifyandPrintallElements_underProfilePage2()
         self.driver.press_keycode(4)
         self.driver.press_keycode(4)
         cl.allureLogs("Succesfully Validated Profile Page")
@@ -250,14 +251,21 @@ class ShopTest(unittest.TestCase):
             self.search_page.SearchResultsPagewhenNOresults()
             cl.allureLogs("Verified all items after searching")
 
-    @pytest.mark.order(25)
-    def test_ValidateInputSearchText(self):
-        searchtext = "apple"
+    @pytest.mark.order(26)
+    def test_ValidateValidInputSearchText(self):
+        searchtext = "myntra"
         print("Validating Valid Input Search Text")
         cl.allureLogs("Verify the input text with Valid Input Search Text")
         self.search_page.ClearSearchBox()
         self.search_page.SearchProduct(searchtext)
         cl.allureLogs("Input Search Text validated successfully")
+
+    @pytest.mark.order(27)
+    def test_Verifytheelementsaftersearchwithvalidinput(self):
+        print("Now Running test_Verifytheelementsaftersearchwithvalidinput")
+        cl.allureLogs("Verifying elements after searching with Valid Input Search Text")
+        self.search_page.print_searchresults()
+        cl.allureLogs("Verified all items after searching with Valid Input Search Text")
 
 if __name__ == "__main__":
     unittest.main()

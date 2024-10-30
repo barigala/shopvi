@@ -2,32 +2,31 @@ import time
 from base.BasePage import BasePage
 import utils.CustomLogger as cl
 
-
 class ShopDashboard(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
 
-    #locators values in Vi Shop dashboard
-    _ShopButton = '//android.widget.TextView[@text="shop"]' #xpath
-    _viAppHomeButton = '//android.widget.TextView[@text="home"]' #xpath
-    _dealsButton = '//android.widget.TextView[@text="deals"]'   #xpath
-    _exploreButton = '//android.widget.TextView[@text="explore"]' #xpath
-    _myOrdersButton = '//android.widget.TextView[@text="my orders"]' #xpath
-    _vihomeButton = '//android.widget.TextView[@text="home"]' #xpath
-    _accountsButton = '//android.view.ViewGroup[@content-desc="DS_SHOPshop-account-icon.webp"]' #xpath
-    _searchicon = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/search.png"]' #xpath
-    _cartIcon = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/Cart.webp"]' #xpath
-    _backButton = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/back-arrow.webp"]' #xpath
-    _deals_Pagetitle = '//android.widget.TextView[@text="deals"]' #xpath
-    _explore_pagetitle = '//android.widget.TextView[@text="explore"]' #xpath
-    _myorders_pagetitle = '//android.widget.TextView[@text="your orders"]' #xpath
-    _myorders_SearchBox = '//android.widget.EditText[@text="search for orders..."]' #xpath
-    _accountpage_shopbycategory = '//android.widget.TextView[@text="shop by category"]' #xpath
-    _accountpage_sellingfast = '//android.widget.TextView[@text="selling fast"]' #xpath
-    _accountpage_sellingfast_seeallBTN = '(//android.widget.TextView[@text="see all"])[1]' #xpath
-    _accountpage_CC = '//android.widget.TextView[@text="credit cards"]' #xpath
+    # Locators values in Vi Shop dashboard
+    _ShopButton = '//android.widget.TextView[@text="shop"]'  # xpath
+    _viAppHomeButton = '//android.widget.TextView[@text="home"]'  # xpath
+    _dealsButton = '//android.widget.TextView[@text="deals"]'  # xpath
+    _exploreButton = '//android.widget.TextView[@text="explore"]'  # xpath
+    _myOrdersButton = '//android.widget.TextView[@text="my orders"]'  # xpath
+    _vihomeButton = '//android.widget.TextView[@text="home"]'  # xpath
+    _accountsButton = '//android.view.ViewGroup[@content-desc="DS_SHOPshop-account-icon.webp"]'  # xpath
+    _searchicon = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/search.png"]'  # xpath
+    _cartIcon = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/Cart.webp"]'  # xpath
+    _backButton = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/back-arrow.webp"]'  # xpath
+    _deals_Pagetitle = '//android.widget.TextView[@text="deals"]'  # xpath
+    _explore_pagetitle = '//android.widget.TextView[@text="explore"]'  # xpath
+    _myorders_pagetitle = '//android.widget.TextView[@text="your orders"]'  # xpath
+    _myorders_SearchBox = '//android.widget.EditText[@text="search for orders..."]'  # xpath
+    _accountpage_shopbycategory = '//android.widget.TextView[@text="shop by category"]'  # xpath
+    _accountpage_sellingfast = '//android.widget.TextView[@text="selling fast"]'  # xpath
+    _accountpage_sellingfast_seeallBTN = '(//android.widget.TextView[@text="see all"])[1]'  # xpath
+    _accountpage_CC = '//android.widget.TextView[@text="credit cards"]'  # xpath
     _accountpage_CC_seeallBTN = '(//android.widget.TextView[@text="see all"])[2]'
     _accountpage_recentlyviewed = '//android.widget.TextView[@text="recently viewed"]'
     _accountpage_recentlyviewed_seeallBTN = '//android.widget.TextView[@text="see all"]'
@@ -44,7 +43,6 @@ class ShopDashboard(BasePage):
     _accountpage_restcategories3 = '//android.widget.TextView[@text="entertainment"]'
     _accountpage_restcategories4 = '//android.widget.TextView[@text="food"]'
     _accountpage_restcategories5 = '//android.widget.TextView[@text="shopping"]'
-
 
     def NavtoShopDashBoard(self):
         self.clickElement(self._ShopButton, "xpath")
@@ -65,8 +63,8 @@ class ShopDashboard(BasePage):
         }
         for name, locator in elements.items():
             element_text = self.check_element(locator)
-            print(f"{name}: {element_text}")
-
+            cl.allureLogs(f"{name}: {element_text}")
+        self.takeScreenshot("Print all Icons on Shop Dashboard")
 
     def ShopDashboard_elements(self):
         elements = {
@@ -78,8 +76,8 @@ class ShopDashboard(BasePage):
         }
         for name, locator in elements.items():
             element_text = self.check_element(locator)
-            print(f"{name}: {element_text}")
-        #self.print_allElements_withScroll(elements)
+            cl.allureLogs(f"{name}: {element_text}")
+        self.takeScreenshot("Print all elements on Shop Dashboard")
 
     def NavtoDeals(self):
         self.clickElement(self._dealsButton, "xpath")
@@ -91,11 +89,12 @@ class ShopDashboard(BasePage):
         elements = {
             'Deals Back Button': self._backButton,
             'Deals Page Title': self._deals_Pagetitle,
-            'Deals Cart Icon' : self._cartIcon
+            'Deals Cart Icon': self._cartIcon
         }
         for name, locator in elements.items():
             element_text = self.check_element(locator)
-            print(f"{name}: {element_text}")
+            cl.allureLogs(f"{name}: {element_text}")
+        self.takeScreenshot("Print all elements on Deals Page")
 
     def NavtoExplore(self):
         self.clickElement(self._exploreButton, "xpath")
@@ -106,13 +105,13 @@ class ShopDashboard(BasePage):
     def print_allitems_onExplorePage(self):
         elements = {
             'Explore Page Title': self._explore_pagetitle,
-            'Explore Search Icon' :self._searchicon,
-            'Explore Cart Icon' : self._cartIcon
+            'Explore Search Icon': self._searchicon,
+            'Explore Cart Icon': self._cartIcon
         }
         for name, locator in elements.items():
             element_text = self.check_element(locator)
-            print(f"{name}: {element_text}")
-
+            cl.allureLogs(f"{name}: {element_text}")
+        self.takeScreenshot("Print all elements on Explore Page")
 
     def NavtoMyOrders(self):
         self.clickElement(self._myOrdersButton, "xpath")
@@ -124,9 +123,10 @@ class ShopDashboard(BasePage):
         elements = {
             'My Orders Back Button': self._backButton,
             'My Orders Page Title': self._myorders_pagetitle,
-            'My Orders Cart Icon' : self._cartIcon,
+            'My Orders Cart Icon': self._cartIcon,
             'My Orders Search Box': self._myorders_SearchBox
         }
         for name, locator in elements.items():
             element_text = self.check_element(locator)
-            print(f"{name}: {element_text}")
+            cl.allureLogs(f"{name}: {element_text}")
+        self.takeScreenshot("Print all elements on My Orders Page")
