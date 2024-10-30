@@ -1,38 +1,35 @@
 @echo off
 setlocal
 
+rem Start Appium server
+start /B appium
+timeout /T 10
+
+rem Activate virtual environment
+call D:\PyProjects\shopvipytest\myenv\Scripts\activate
+
 rem Set the paths for reports
-set ALLURE_RESULTS=D:\PyProjects\shopvi\reports\allurereports
-set HTML_REPORTS=D:\PyProjects\shopvi\reports\htmlreports
-set ALLURE_HTML_REPORT=D:\PyProjects\shopvi\reports\allure_report
-set ZIP_FILE=D:\PyProjects\shopvi\reports\allure_report.zip
+set ALLURE_RESULTS=D:\PyProjects\shopvipytest\reports\allurereports
+set HTML_REPORT=D:\PyProjects\shopvipytest\reports\pytest_report.html
+set ALLURE_HTML_REPORT=D:\PyProjects\shopvipytest\reports\allure_report
 
 rem Clean up old report directories
-if exist %ALLURE_RESULTS% (
-    rmdir /s /q %ALLURE_RESULTS%
-)
-if exist %HTML_REPORTS% (
-    rmdir /s /q %HTML_REPORTS%
-)
-if exist %ALLURE_HTML_REPORT% (
-    rmdir /s /q %ALLURE_HTML_REPORT%
-)
+if exist %ALLURE_RESULTS% ( rmdir /s /q %ALLURE_RESULTS% )
+if exist %ALLURE_HTML_REPORT% ( rmdir /s /q %ALLURE_HTML_REPORT% )
 
 rem Create new report directories
 mkdir %ALLURE_RESULTS%
-mkdir %HTML_REPORTS%
 
-rem Run pytest with verbosity and generate Allure results
-pytest -v --alluredir=%ALLURE_RESULTS%
+rem Run pytest with Allure and HTML reports
+pytest -v --alluredir=%ALLURE_RESULTS% --html=%HTML_REPORT% --self-contained-html
 
 rem Generate Allure HTML report
 allure generate --clean -o %ALLURE_HTML_REPORT% %ALLURE_RESULTS%
 
-rem Zip the Allure HTML report for sharing
-powershell -command "Compress-Archive -Path '%ALLURE_HTML_REPORT%\*' -DestinationPath '%ZIP_FILE%'"
+rem Open Allure report in the default web browser
+start %ALLURE_HTML_REPORT%
 
-rem Run pytest-html with verbosity
-pytest -v --html=%HTML_REPORTS%\report.html
+rem Stop Appium server
+taskkill /F /IM node.exe
 
 endlocal
-pause

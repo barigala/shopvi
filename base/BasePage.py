@@ -163,7 +163,7 @@ class BasePage:
         """Take a screenshot, save it locally, and attach it to Allure report with numbered filenames."""
         BasePage.screenshot_counter += 1  # Increment the screenshot counter
         filename = f"{BasePage.screenshot_counter:03d}_{description}_{time.strftime('%d_%m_%Y_%H_%M_%S')}.png"  # Add the counter prefix with leading zeros
-        screenshotDirectory = "../screenshot/"
+        screenshotDirectory = "./screenshot"
         screenshotPath = os.path.join(screenshotDirectory, filename)
 
         try:

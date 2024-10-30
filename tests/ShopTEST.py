@@ -20,24 +20,21 @@ class ShopTest(unittest.TestCase):
         self.shop_dashboard = ShopDashboard(self.driver)
         self.search_page = SearchPage(self.driver)
 
-    @allure.step("Click on mobile number input field")
-    @pytest.mark.run(order=1)
+    @pytest.mark.order(1)
     def test_click_number_input_field(self):
         print("Now Running test_click_number_input_field")
         cl.allureLogs("Navigation to Mobile number input field")
         self.nav_to_shop.ClickNumberInputField()
         cl.allureLogs("Navigation to Mobile number input field successfully completed")
 
-    @allure.step("Click on dialog box if present")
-    @pytest.mark.run(order=2)
+    @pytest.mark.order(2)
     def test_click_dialog_box(self):
         print("Now Running test_click_dialog_box")
         cl.allureLogs("Dialog box clicked")
         self.nav_to_shop.ClickDialogBox()
         cl.allureLogs("Dialog box clicked successfully")
 
-    @allure.step("Input valid mobile number")
-    @pytest.mark.run(order=3)
+    @pytest.mark.order(3)
     def test_input_valid_mobile_number(self):
         mobile_number = "7507233095"
         print("Now Running test_input_valid_mobile_")
@@ -45,16 +42,14 @@ class ShopTest(unittest.TestCase):
         self.nav_to_shop.inputValidMobileNumber(mobile_number)
         cl.allureLogs("Inputting valid mobile number successfully completed")
 
-    @allure.step("Click OTP button to send OTP")
-    @pytest.mark.run(order=4)
+    @pytest.mark.order(4)
     def test_click_otp_button(self):
         print("Now running test_click_otp_button")
         cl.allureLogs("Clicking OTP button")
         self.nav_to_shop.ClickOTPButton()
         cl.allureLogs("Clicking OTP button successfully completed")
 
-    @allure.step("Input the OTP")
-    @pytest.mark.run(order=5)
+    @pytest.mark.order(5)
     def test_input_otp(self):
         otp = "1234"
         print("Now Running test_input_otp")
@@ -62,30 +57,28 @@ class ShopTest(unittest.TestCase):
         self.nav_to_shop.inputOTP(otp)
         cl.allureLogs("Inputting OTP successfully completed")
 
-    @allure.step("Click Login with OTP button")
-    @pytest.mark.run(order=6)
+    @pytest.mark.order(6)
     def test_click_login_w_otp_button(self):
         print("Now Running test_click_login_w_otp_button")
         cl.allureLogs("Clicking Login with OTP button")
         self.nav_to_shop.LoginWOTPButton()
         cl.allureLogs("Clicking Login with OTP button successfully completed")
 
-    @allure.step("Navigate to shop page")
-    @pytest.mark.run(order=7)
+    @pytest.mark.order(7)
     def test_nav_to_shop(self):
         print("TC1: Navigate to Vi Shop")
         cl.allureLogs("Navigating to shop page")
         self.nav_to_shop.NavtoShop()
         cl.allureLogs(" Succesfully navigated to Vi Shop Dashboard")
 
-    @pytest.mark.run(order=8)
+    @pytest.mark.order(8)
     def test_shopDashboard(self):
         cl.allureLogs("Checking available elements in shop dashboard")
         print("TC2: All available elements on shop dashboard")
         self.shop_dashboard.print_allitems_onDashBoard()
         cl.allureLogs("Found all available elements")
 
-    @pytest.mark.run(order=9)
+    @pytest.mark.order(9)
     def test_DealsPage(self):
         cl.allureLogs("Navigation & Checking all available elements in Deals Page")
         print("TC3: Verify the navigation and all the elements present in Deals Page")
@@ -93,7 +86,7 @@ class ShopTest(unittest.TestCase):
         self.shop_dashboard.print_allitems_onDealsPage()
         cl.allureLogs("Found all available elements in Deals Page")
 
-    @pytest.mark.run(order=10)
+    @pytest.mark.order(10)
     def test_ExplorePage(self):
         cl.allureLogs("Navigation & Checking all available elements in Explore Page")
         print("TC4: Verify the navigation and all the elements present in Explore Page")
@@ -101,7 +94,7 @@ class ShopTest(unittest.TestCase):
         self.shop_dashboard.print_allitems_onExplorePage()
         cl.allureLogs("Found all available elements in Explore Page")
 
-    @pytest.mark.run(order=11)
+    @pytest.mark.order(11)
     def test_myOrdersPage(self):
         cl.allureLogs("Navigation & Checking all available elements in My Orders Page")
         print("TC5: Verify the navigation and all the elements present in My Orders Page")
@@ -109,7 +102,7 @@ class ShopTest(unittest.TestCase):
         self.shop_dashboard.print_allitems_onMyOrders()
         cl.allureLogs("Found all available elements in My Orders Page")
 
-    @pytest.mark.run(order=12)
+    @pytest.mark.order(12)
     def test_MenuUnder_ShopDashboard(self):
         cl.allureLogs("Navigating to menus under Shop Dashboard")
         print("TC6: Verify all the options available in Shop Dashboard")
@@ -117,7 +110,7 @@ class ShopTest(unittest.TestCase):
         self.shop_dashboard.ShopDashboard_elements()
         cl.allureLogs("Found all available elements under Shop Dashboard")
 
-    @pytest.mark.run(order=13)
+    @pytest.mark.order(13)
     def test_AccountsPage(self):
         cl.allureLogs("Finding all Sections in Accounts Page")
         print("TC7: Verify all the sections available in Accounts Page")
@@ -126,7 +119,7 @@ class ShopTest(unittest.TestCase):
         cl.allureLogs("Found all available sections in Accounts Page")
 
 
-    @pytest.mark.run(order=14)
+    @pytest.mark.order(14)
     def test_NavPagesinAccountPage(self):
         cl.allureLogs("Navigation across sections inside Accounts Page")
         print("TC8: Verify the navigation to credit cards page")
@@ -159,7 +152,7 @@ class ShopTest(unittest.TestCase):
         self.driver.press_keycode(4)
 
 
-    @pytest.mark.run(order=15)
+    @pytest.mark.order(15)
     def test_SavPaymentsPage(self):
         print("TC9: Validate Saved Payments page")
         cl.allureLogs("Validating Saved Payments page")
@@ -171,14 +164,14 @@ class ShopTest(unittest.TestCase):
         self.account_page.Savdpay_page(expected_title, expected_text, cta_button_locator)
         cl.allureLogs("Succesfully Validated Saved Payments Page")
 
-    @pytest.mark.run(order=16)
+    @pytest.mark.order(16)
     def test_savingsBanner(self):
         print("TC10: Verify the Savings Banner")
         cl.allureLogs("Verifying Savings Banner")
         self.account_page.VerifyTotalSavings_Banner()
         cl.allureLogs("Savings Banner verified successfully")
 
-    @pytest.mark.run(order=17)
+    @pytest.mark.order(17)
     def test_FAQPage(self):
         print("TC11: Verify FAQ page")
         cl.allureLogs("Verifying FAQ page")
@@ -187,7 +180,7 @@ class ShopTest(unittest.TestCase):
         self.driver.press_keycode(4)
         cl.allureLogs("Succesfully Validated FAQ Page")
 
-    @pytest.mark.run(order=18)
+    @pytest.mark.order(18)
     def test_myOrdersPage(self):
         print("TC12: Verify My Orders page")
         cl.allureLogs("Verifying My Orders page")
@@ -196,7 +189,7 @@ class ShopTest(unittest.TestCase):
         self.driver.press_keycode(4)
         cl.allureLogs("Succesfully Validated My Orders Page")
 
-    @pytest.mark.run(order=19)
+    @pytest.mark.order(19)
     def test_CCPage(self):
         print("TC13: Verify Credit Card page")
         cl.allureLogs("Verifying Credit Card page")
@@ -205,7 +198,7 @@ class ShopTest(unittest.TestCase):
         self.driver.press_keycode(4)
         cl.allureLogs("Succesfully Validated Credit Card Page")
 
-    @pytest.mark.run(order=20)
+    @pytest.mark.order(20)
     def test_CouponsPage(self):
         print("TC14: Verify Coupons page")
         cl.allureLogs("Verifying Coupons page")
@@ -214,7 +207,7 @@ class ShopTest(unittest.TestCase):
         self.driver.press_keycode(4)
         cl.allureLogs("Succesfully Validated Coupons Page")
 
-    @pytest.mark.run(order=21)
+    @pytest.mark.order(21)
     def test_ProfilePage(self):
         print("TC15: Verify Profile page")
         cl.allureLogs("Verifying Profile page")
@@ -225,7 +218,7 @@ class ShopTest(unittest.TestCase):
         self.driver.press_keycode(4)
         cl.allureLogs("Succesfully Validated Profile Page")
 
-    @pytest.mark.run(order=22)
+    @pytest.mark.order(22)
     def test_searchPage(self):
         print("Now Running test_searchPage")
         cl.allureLogs("Verifying Search Page")
@@ -234,7 +227,7 @@ class ShopTest(unittest.TestCase):
         self.search_page.VerifyandPrint_allitems_onSearchPage2()
         cl.allureLogs("Verified all items on Search Page")
 
-    @pytest.mark.run(order=23)
+    @pytest.mark.order(23)
     def test_Inputsearch(self):
         searchText = "Zzz"
         print("Now Running test_Inputsearch")
@@ -242,7 +235,7 @@ class ShopTest(unittest.TestCase):
         self.search_page.SearchProduct(searchText)
         cl.allureLogs("Inputting valid Product ID successfully completed")
 
-    @pytest.mark.run(order=24)
+    @pytest.mark.order(24)
     def test_ValidateInputSearchText(self):
         print("Validating Input Search Text")
         cl.allureLogs("Verify the input text")
@@ -250,12 +243,21 @@ class ShopTest(unittest.TestCase):
         cl.allureLogs("Input Search Text validated successfully")
 
 
-    @pytest.mark.run(order=25)
+    @pytest.mark.order(25)
     def test_Verifytheelementsaftersearch(self):
             print("Now Running test_Verifytheelementsaftersearch")
             cl.allureLogs("Verifying elements after searching")
             self.search_page.SearchResultsPagewhenNOresults()
             cl.allureLogs("Verified all items after searching")
+
+    @pytest.mark.order(25)
+    def test_ValidateInputSearchText(self):
+        searchtext = "apple"
+        print("Validating Valid Input Search Text")
+        cl.allureLogs("Verify the input text with Valid Input Search Text")
+        self.search_page.ClearSearchBox()
+        self.search_page.SearchProduct(searchtext)
+        cl.allureLogs("Input Search Text validated successfully")
 
 if __name__ == "__main__":
     unittest.main()

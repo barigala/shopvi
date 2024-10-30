@@ -99,4 +99,9 @@ class SearchPage(BasePage):
             print(f"{name}: {element_text}")
 
 
+    def ClearSearchBox(self):
+        search_box = self.driver.find_element(self._searchBox)
+        search_box.clear()
+
+
 

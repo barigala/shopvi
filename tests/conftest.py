@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 # Import the Driver class after modifying sys.path
 from base.DriverClass import Driver
 
-ALLURE_RESULTS_PATH = 'D:\\PyProjects\\shopvi\\reports\\allurereports'
+ALLURE_RESULTS_PATH = 'D:\\PyProjects\\shopvipytest\\reports\\allurereports'
 
 @pytest.fixture(scope="session")
 def session_driver():

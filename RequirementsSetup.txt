@@ -4,3 +4,4 @@ pytest-ordering
 allure-pytest
 behave
 allure-behave
+pytest-html
