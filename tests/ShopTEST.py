@@ -252,7 +252,7 @@ class ShopTest(unittest.TestCase):
             cl.allureLogs("Verified all items after searching")
 
     @pytest.mark.order(26)
-    def test_ValidateValidInputSearchText(self):
+    def test_ValidInputSearchText(self):
         searchtext = "myntra"
         print("Validating Valid Input Search Text")
         cl.allureLogs("Verify the input text with Valid Input Search Text")

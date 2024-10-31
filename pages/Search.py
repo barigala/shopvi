@@ -1,5 +1,7 @@
 import time
 from appium.webdriver.common.appiumby import AppiumBy
+from selenium.common import TimeoutException
+
 from base.BasePage import BasePage
 import utils.CustomLogger as cl
 
@@ -36,6 +38,7 @@ class SearchPage(BasePage):
     _FoodIcon = 'new UiSelector().className("android.widget.ImageView").instance(3)'
     _ShoppingIcon = 'new UiSelector().className("android.widget.ImageView").instance(4)'
     _TravelIcon = 'new UiSelector().className("android.widget.ImageView").instance(5)'
+    _SearchCloseIcon = 'new UiSelector().className("android.widget.ImageView").instance(1)'
 
     def NavtoSearch(self):
         self.clickElement(self._searchicon, "xpath")
@@ -114,10 +117,9 @@ class SearchPage(BasePage):
         cl.allureLogs("Verified No Results Found page elements")
 
     def ClearSearchBox(self):
-        search_box = self.driver.find_element(self._searchBox)
-        search_box.clear()
-        cl.allureLogs("Cleared search box")
-        self.takeScreenshot("Search Box Cleared")
+        self.click_element_by_uiautomator(self._SearchCloseIcon)
+        cl.allureLogs("Verified clicking on Search Box X Icon")
+        self.takeScreenshot("Click Search Box X Icon")
 
     def print_searchresults(self):
         cl.allureLogs("Printing search results in specified index range")

@@ -291,12 +291,9 @@ class BasePage:
     def findelement_by_uiautomator(self, uiautomator_string, timeout=10):
         try:
             cl.allureLogs(f"Trying to find element by UIAutomator: {uiautomator_string}")
-
-            # Use the driver to find the element using UIAutomator with a wait
             element = WebDriverWait(self.driver, timeout).until(
                 lambda x: x.find_element(AppiumBy.ANDROID_UIAUTOMATOR, uiautomator_string)
             )
-
             cl.allureLogs(f"Element found by UIAutomator: {uiautomator_string}")
             return element
         except Exception as e:
@@ -306,12 +303,9 @@ class BasePage:
     def iselement_present_by_uiautomator(self, uiautomator_string, timeout=10):
         try:
             cl.allureLogs(f"Checking if element is present by UIAutomator: {uiautomator_string}")
-
-            # Use the driver to find the element using UIAutomator with a wait
             WebDriverWait(self.driver, timeout).until(
                 lambda x: x.find_element(AppiumBy.ANDROID_UIAUTOMATOR, uiautomator_string)
             )
-
             cl.allureLogs(f"Element is present by UIAutomator: {uiautomator_string}")
             return True
         except Exception as e:
@@ -321,13 +315,9 @@ class BasePage:
     def click_element_by_uiautomator(self, uiautomator_string, timeout=10):
         try:
             cl.allureLogs(f"Trying to click element by UIAutomator: {uiautomator_string}")
-
-            # Find the element
             element = WebDriverWait(self.driver, timeout).until(
                 lambda x: x.find_element(AppiumBy.ANDROID_UIAUTOMATOR, uiautomator_string)
             )
-
-            # Click the element
             element.click()
             cl.allureLogs(f"Element clicked by UIAutomator: {uiautomator_string}")
             return True
@@ -336,22 +326,18 @@ class BasePage:
             return False
 
     def check_elements_by_uiautomator(self, elements_dict, timeout=10):
+        """
+        Check the presence of multiple elements provided as a dictionary where
+        keys are descriptive names and values are UIAutomator strings.
+        Logs the status of each element found or not found.
+        """
         for element_name, uiautomator_string in elements_dict.items():
             try:
-                # Attempt to find the element using UIAutomator
                 element = WebDriverWait(self.driver, timeout).until(
                     lambda x: x.find_element(AppiumBy.ANDROID_UIAUTOMATOR, uiautomator_string)
                 )
-                if element:
-                    # Log or print success if element is found
-                    cl.allureLogs(f"Element found: {element_name}")
-                    print(f"Element found: {element_name}")
-                else:
-                    cl.allureLogs(f"Element not found: {element_name}")
-                    print(f"Element not found: {element_name}")
+                cl.allureLogs(f"Element found: {element_name}")
+                print(f"Element found: {element_name}")
             except Exception as e:
-                # Log or print failure if element is not found or any error occurs
-                cl.allureLogs(
-                    f"Error finding element '{element_name}' with UIAutomator selector: {uiautomator_string}. Error: {str(e)}")
-                print(
-                    f"Error finding element '{element_name}' with UIAutomator selector: {uiautomator_string}. Error: {str(e)}")
+                cl.allureLogs(f"Error finding element '{element_name}' with UIAutomator selector: {uiautomator_string}. Error: {str(e)}")
+                print(f"Error finding element '{element_name}' with UIAutomator selector: {uiautomator_string}. Error: {str(e)}")

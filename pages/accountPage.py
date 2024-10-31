@@ -250,26 +250,25 @@ class AccountPage(BasePage):
             self.driver.press_keycode(4)
 
     def VerifyandPrint_allElements_under_myOrderspage1(self):
-        cl.allureLogs("Verifying and printing all elements under My Orders Page")
+        cl.allureLogs("Verifying and printing all elements under My Orders Page (Part 1)")
         elements = {
-            'Orders Page Search Box' : self._ordersSearchBox,
-            'Orders Page Page Title': self._ordersPageTitle
+            'Orders Page Search Box': self._ordersSearchBox,
+            'Orders Page Title': self._ordersPageTitle
         }
         for name, locator in elements.items():
-            element_text = self.check_element(locator)
+            element = self.findelement_by_uiautomator(locator)
+            element_text = element.text if element else "Element not found"
             cl.allureLogs(f"{name}: {element_text}")
-        self.takeScreenshot("Verifying and printing all elements under My Orders Page")
+        self.takeScreenshot("My Orders Page Part 1")
 
     def VerifyandPrint_allElements_under_myOrderspage2(self):
-        cl.allureLogs("Verifying and printing all elements under My Orders Page")
+        cl.allureLogs("Verifying and printing all elements under My Orders Page (Part 2)")
         elements = {
-            'Orders Page Search Icon' : self._ordersSearchIcon,
-            'Orders Page Page Filter Icon': self._ordersPageFilterIcon
+            'Orders Page Search Icon': self._ordersSearchIcon,
+            'Orders Page Filter Icon': self._ordersPageFilterIcon
         }
-        for name, locator in elements.items():
-            element_text = self.check_elements_by_uiautomator(locator)
-            cl.allureLogs(f"{name}: {element_text}")
-        self.takeScreenshot("Verifying and printing all elements under My Orders Page")
+        self.check_elements_by_uiautomator(elements)
+        self.takeScreenshot("My Orders Page Part 2")
 
 
     def VerifyandPrint_allElements_under_CCspage(self):
@@ -291,29 +290,27 @@ class AccountPage(BasePage):
         self.takeScreenshot("Navigated to Profile Page")
 
     def VerifyandPrintallElements_underProfilePage1(self):
-        cl.allureLogs("Verifying and printing all elements under Profile Page")
+        cl.allureLogs("Verifying and printing all elements under Profile Page (Part 1)")
         elements = {
             'My Details Page Text': self._mydetailsPage,
-            'Text Description' : self._textdesc,
-            'Save Button' : self._saveButton
+            'Text Description': self._textdesc,
+            'Save Button': self._saveButton
         }
         for name, locator in elements.items():
-            element_text = self.check_element(locator)
+            element = self.findelement_by_uiautomator(locator)
+            element_text = element.text if element else "Element not found"
             cl.allureLogs(f"{name}: {element_text}")
-        self.takeScreenshot("Verifying and printing all elements under Profile Page")
-
+        self.takeScreenshot("Profile Page Part 1")
 
     def VerifyandPrintallElements_underProfilePage2(self):
-        cl.allureLogs("Verifying and printing all elements under Profile Page")
+        cl.allureLogs("Verifying and printing all elements under Profile Page (Part 2)")
         elements = {
             'Profile Picture': self._profilePic,
             'Mobile Number Field': self._mobileNumberField,
             'Email ID Field': self._emailIDField
         }
-        for name, locator in elements.items():
-            element_text = self.check_elements_by_uiautomator(locator)
-            cl.allureLogs(f"{name}: {element_text}")
-        self.takeScreenshot("Verifying and printing all elements under Profile Page")
+        self.check_elements_by_uiautomator(elements)
+        self.takeScreenshot("Profile Page Part 2")
 
 
     def VerifyandPrint_allElements_under_CouponsPage(self):
