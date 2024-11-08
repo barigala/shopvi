@@ -1,0 +1,4 @@
+INFO     ShopVI:BasePage.py:61 Element found with locatorType 'xpath' and locatorValue '//android.widget.TextView[@text="credit cards"]'
+INFO     ShopVI:BasePage.py:74 Clicked element with locatorType 'xpath' and locatorValue '//android.widget.TextView[@text="credit cards"]'
+INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\025_Navigated to Credit Cards_08_11_2024_16_24_09.png'
+INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\026_Verifying and printing all elements under Credit Cards Page_08_11_2024_16_24_10.png'

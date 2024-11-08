@@ -1,3 +1,4 @@
+import random
 import time
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.common import TimeoutException
@@ -121,28 +122,70 @@ class SearchPage(BasePage):
         cl.allureLogs("Verified clicking on Search Box X Icon")
         self.takeScreenshot("Click Search Box X Icon")
 
-    def print_searchresults(self):
-        cl.allureLogs("Printing search results in specified index range")
+    def print_searchresults(self, search_text):
+        """Finds and prints displayed element groups based on the specified search text."""
+        cl.allureLogs(f"Printing search results for the search text: {search_text}")
         self.takeScreenshot("Print Search Results")
 
-        start_index = 35
-        end_index = 45
-        displayed_elements = []
+        start_index = 0
+        end_index = 100
+        max_unsuccessful_attempts = 2
+        unsuccessful_attempts = 0
+        displayed_groups = []
 
         for index in range(start_index, end_index + 1):
             try:
-                element = self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, f'new UiSelector().className("android.view.ViewGroup").instance({index})')
-                if element.is_displayed():
-                    displayed_elements.append(f'Element at index {index} is displayed with text: "{element.text}"')
-                    print(f'Element at index {index} is displayed with text: "{element.text}"')
-            except Exception as e:
-                print(f'Element at index {index} is not found: {str(e)}')
+                # Locate the group container
+                group_container = self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,f'new UiSelector().className("android.view.ViewGroup").instance({index})')
 
-        if not displayed_elements:
-            print("No elements are displayed in the specified index range.")
+                # Locate image within the group
+                image_element = self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,f'new UiSelector().className("android.widget.ImageView").instance({index})'                )
+
+                # Locate text elements within the group (matching any text)
+                text_elements = self.driver.find_elements(AppiumBy.XPATH,f'//android.widget.TextView[contains(@text, "{search_text}")]')
+
+                # Ensure all elements are displayed before considering this a valid group
+                if group_container.is_displayed() and image_element.is_displayed() and text_elements:
+                    displayed_groups.append((group_container, image_element, text_elements))
+                    print(f"Displayed element group at index {index} with text: '{text_elements[0].text}'")
+                    unsuccessful_attempts = 0  # Reset unsuccessful attempt counter
+                else:
+                    unsuccessful_attempts += 1
+            except Exception as e:
+                print(f"Element group at index {index} not found: {str(e)}")
+                unsuccessful_attempts += 1
+
+            # Stop searching after reaching the max consecutive unsuccessful attempts
+            if unsuccessful_attempts >= max_unsuccessful_attempts:
+                print("Stopping search due to consecutive unsuccessful attempts.")
+                break
+
+        if not displayed_groups:
+            print("No element groups are displayed in the specified index range.")
+            cl.allureLogs("No element groups displayed in the specified range.")
         else:
-            print("Displayed elements:")
-            for item in displayed_elements:
-                print(item)
+            print("Displayed element groups found:")
+            for i, group in enumerate(displayed_groups):
+                group_text = group[2][0].text if group[2] else "[No Text]"
+                print(f"Element Group {i} with text: '{group_text}'")
+
         cl.allureLogs("Completed printing search results")
         self.takeScreenshot("Search Results Printed")
+        return displayed_groups
+
+    def click_Oneofthe_searchResults(self, search_text):
+        """Uses print_searchresults to find element groups and clicks one randomly based on the search text."""
+        displayed_groups = self.print_searchresults(search_text)
+
+        if displayed_groups:
+            random_group = random.choice(displayed_groups)
+            random_group[0].click()  # Click the group container
+            group_text = random_group[2][0].text if random_group[2] else "[No Text]"
+            print(f"Clicked on a random element group with text: '{group_text}'")
+            cl.allureLogs(f"Clicked on a random element group with text: '{group_text}'")
+        else:
+            print("No element groups found to click.")
+            cl.allureLogs("No element groups found to click.")
+
+    def click_element_with_bounds(self, bounds):
+        self.click_by_bounds(bounds)

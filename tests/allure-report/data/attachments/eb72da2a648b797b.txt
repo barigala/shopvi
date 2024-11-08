@@ -1,0 +1,1 @@
+INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\008_Print all Icons on Shop Dashboard_08_11_2024_16_23_06.png'

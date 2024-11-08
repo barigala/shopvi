@@ -1,0 +1,3 @@
+Before Method
+TC4: Verify the navigation and all the elements present in Explore Page
+After Method

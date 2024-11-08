@@ -1,0 +1,5 @@
+INFO     ShopVI:BasePage.py:61 Element found with locatorType 'xpath' and locatorValue '//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.ImageView'
+INFO     ShopVI:BasePage.py:74 Clicked element with locatorType 'xpath' and locatorValue '//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.ImageView'
+INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\029_Navigated to Profile Page_08_11_2024_16_24_23.png'
+INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\030_Profile Page Part 1_08_11_2024_16_24_25.png'
+INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\031_Profile Page Part 2_08_11_2024_16_24_26.png'

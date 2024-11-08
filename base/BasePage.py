@@ -7,6 +7,12 @@ from selenium.common import ElementNotVisibleException, ElementNotSelectableExce
     TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 import utils.CustomLogger as cl
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.actions import interaction
+from selenium.webdriver.common.actions.action_builder import ActionBuilder
+from selenium.webdriver.common.actions.mouse_button import MouseButton
+from selenium.webdriver.common.actions.pointer_input import PointerInput
+
 
 
 class BasePage:
@@ -163,7 +169,7 @@ class BasePage:
         """Take a screenshot, save it locally, and attach it to Allure report with numbered filenames."""
         BasePage.screenshot_counter += 1  # Increment the screenshot counter
         filename = f"{BasePage.screenshot_counter:03d}_{description}_{time.strftime('%d_%m_%Y_%H_%M_%S')}.png"  # Add the counter prefix with leading zeros
-        screenshotDirectory = "./screenshot"
+        screenshotDirectory = "./tests/screenshot"
         screenshotPath = os.path.join(screenshotDirectory, filename)
 
         try:
@@ -341,3 +347,4 @@ class BasePage:
             except Exception as e:
                 cl.allureLogs(f"Error finding element '{element_name}' with UIAutomator selector: {uiautomator_string}. Error: {str(e)}")
                 print(f"Error finding element '{element_name}' with UIAutomator selector: {uiautomator_string}. Error: {str(e)}")
+

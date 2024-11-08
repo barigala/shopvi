@@ -1,0 +1,3 @@
+Before Method
+TC13: Verify Credit Card page
+After Method

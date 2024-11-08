@@ -198,6 +198,13 @@ class ShopTest(unittest.TestCase):
         assert self.search_page.verifySearchDisplayedText(searchText)
         cl.allureLogs("Input Search Text validated successfully")
 
+    @pytest.mark.order(22)
+    def test_ClickonASearchResult(self):
+        element = 'new UiSelector().className("android.widget.ImageView").instance(2)'
+        self.search_page.click_element_by_uiautomator(element)
+        cl.allureLogs("Clicked on Search Result")
+        print("Navigating to Product Details Page")
+
 
 
 if __name__ == "__main__":

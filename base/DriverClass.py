@@ -12,7 +12,7 @@ class Driver:
         options.platform_version = '14'
         options.device_name = 'POCO X6 5G'
         options.udid = '79003d15'
-        options.app = 'D:\\PyProjects\\vishop.apk'
+        options.app = '"D:\\PyProjects\\shopvipytest\\vishop.apk"'
         options.app_package = 'com.mventus.selfcare.activity'
         options.app_activity = 'com.mventus.selfcare.activity.MainActivity'
         options.full_reset = False

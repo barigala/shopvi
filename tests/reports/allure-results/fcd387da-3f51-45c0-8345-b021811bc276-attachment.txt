@@ -1,0 +1,3 @@
+Before Method
+TC11: Verify FAQ page
+After Method

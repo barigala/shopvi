@@ -4,7 +4,7 @@ import os
 
 def customLogger(logLevel=logging.DEBUG):
     # Define the log directory and file
-    log_dir = "D:\\PyProjects\\shopvi\\reports"
+    log_dir = "D:\\PyProjects\\shopvipytest\\tests\\reports"
     log_file = os.path.join(log_dir, "testreport.log")
 
     # Ensure the directory exists
