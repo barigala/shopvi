@@ -3,7 +3,7 @@ setlocal
 
 rem Start Appium server (optional if you want to start Appium before running tests)
 rem start /B appium
-rem timeout /T 10
+rem timeout /T 05
 
 rem Activate virtual environment
 call D:\PyProjects\shopvipytest\myenv\Scripts\activate

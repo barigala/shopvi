@@ -23,7 +23,11 @@ class BasePage:
         self.driver = driver
 
     def waitForElement(self, locatorValue, locatorType="id", timeout=25):
-        """Wait for an element to be present and return it."""
+        """
+        Waits for an element to be present on the screen based on locator type and value.
+        Difference: Uses various locator strategies like ID, class, description, etc., to find elements.
+        Usage: Use this to ensure an element is present before interacting with it, reducing the chance of errors from elements not loading in time.
+        """
         locatorType = locatorType.lower()
         wait = WebDriverWait(self.driver, timeout, poll_frequency=1,
                              ignored_exceptions=[ElementNotVisibleException, ElementNotSelectableException,
@@ -55,7 +59,11 @@ class BasePage:
             return None
 
     def getElement(self, locatorValue, locatorType="id"):
-        """Retrieve an element after waiting for it."""
+        """
+        Retrieves an element after waiting for it to be present.
+        Difference: uses `waitForElement` internally.
+        Usage:Use this when you need to retrieve an element for further actions (e.g., clicking, sending text).
+        """
         try:
             element = self.waitForElement(locatorValue, locatorType)
             self.log.info(f"Element found with locatorType '{locatorType}' and locatorValue '{locatorValue}'")
@@ -66,7 +74,11 @@ class BasePage:
             return None
 
     def clickElement(self, locatorValue, locatorType="id"):
-        """Click an element after waiting for it."""
+        """
+        Clicks an element after waiting for it to be present.
+        Difference: Combines `getElement` and `.click()`.
+        Usage: Use this to perform click actions on elements, handling waiting internally.
+        """
         try:
             element = self.getElement(locatorValue, locatorType)
             if element:
@@ -81,7 +93,11 @@ class BasePage:
             assert False
 
     def sendText(self, text, locatorValue, locatorType="id"):
-        """Send text to an element."""
+        """
+        Sends input text to an element, clearing any existing text.
+        Difference: Clears text before sending new input.
+        Usage: Use this for input fields where text might need to be cleared first.
+        """
         try:
             element = self.getElement(locatorValue, locatorType)
             if element:
@@ -98,7 +114,11 @@ class BasePage:
             assert False
 
     def isDisplayed(self, locatorValue, locatorType="id"):
-        """Check if an element is displayed."""
+        """
+        Checks if an element is visible on the screen.
+        Difference: Uses `getElement` and `.is_displayed()`.
+        Usage: Use to verify that an element is visible before interacting with it.
+        """
         try:
             element = self.getElement(locatorValue, locatorType)
             if element and element.is_displayed():
@@ -113,7 +133,11 @@ class BasePage:
             return False
 
     def clickKeypadButton(self, digit):
-        """Click a button on the keypad by its text."""
+        """
+        Clicks a specific button on an on-screen keypad by its text value.
+        Difference: Focuses on keypad interactions.
+        Usage: Use for numeric inputs where buttons appear on a keypad (e.g., entering PINs).
+        """
         try:
             locatorValue = f'//android.widget.TextView[@text="{digit}"]'
             self.clickElement(locatorValue, "xpath")
@@ -123,7 +147,11 @@ class BasePage:
             self.log.error(f"Failed to click keypad button with digit '{digit}'. Error: {str(e)}")
 
     def sendNumberViaKeypad(self, number):
-        """Send a number via keypad, with a delay for consecutive identical digits."""
+        """
+        Sends a number by clicking on individual digits on a keypad with a delay between consecutive identical digits.
+        Difference: Uses delays for repeated digits.
+        Usage: Use to input multi-digit numbers like phone numbers via keypad, especially when consecutive digits are present.
+        """
         try:
             previous_digit = None
             for digit in str(number):
@@ -136,7 +164,11 @@ class BasePage:
             self.log.error(f"Failed to send number '{number}' via keypad. Error: {str(e)}")
 
     def clickOtpButton(self, digit):
-        """Click the OTP button identified by the second occurrence of a digit."""
+        """
+        Clicks an OTP button on the keypad based on a specific digit's position.
+        Difference: Clicks second occurrence of a digit.
+        Usage: Use when needing to distinguish between repeated digits, often in OTP entry fields where each digit has multiple entries.
+        """
         try:
             locatorValue = f'(//android.widget.TextView[@text="{digit}"])[2]'
             self.clickElement(locatorValue, "xpath")
@@ -145,7 +177,11 @@ class BasePage:
             self.log.error(f"Failed to click OTP button with digit '{digit}'. Error: {str(e)}")
 
     def sendOtpViaKeypad(self, otp):
-        """Send an OTP via keypad, handling repeated digits with a delay."""
+        """
+        Sends an OTP via keypad, handling repeated digits with delays.
+        Difference:Focuses on OTPs with repeated digits.
+        Usage: Use to enter OTP codes, especially if digits might repeat consecutively.
+        """
         try:
             previous_digit = None
             for digit in str(otp):
@@ -157,21 +193,16 @@ class BasePage:
         except Exception as e:
             self.log.error(f"Failed to send OTP '{otp}' via keypad. Error: {str(e)}")
 
-    def pressBackButton(self):
-        """Press the Android back button."""
-        try:
-            self.driver.press_keycode(4)  # Keycode for the BACK button
-            self.log.info("Pressed BACK button")
-        except Exception as e:
-            self.log.error(f"Failed to press BACK button. Error: {str(e)}")
 
     def takeScreenshot(self, description):
-        """Take a screenshot, save it locally, and attach it to Allure report with numbered filenames."""
+        """
+        Takes a screenshot, saves it with a unique name, and attaches it to Allure reports.
+        Usage: Use to capture the screen for error/debugging purposes, particularly in test reporting.
+        """
         BasePage.screenshot_counter += 1  # Increment the screenshot counter
         filename = f"{BasePage.screenshot_counter:03d}_{description}_{time.strftime('%d_%m_%Y_%H_%M_%S')}.png"  # Add the counter prefix with leading zeros
         screenshotDirectory = "./tests/screenshot"
         screenshotPath = os.path.join(screenshotDirectory, filename)
-
         try:
             # Ensure the screenshot directory exists
             if not os.path.exists(screenshotDirectory):
@@ -186,37 +217,43 @@ class BasePage:
 
 
     def get_page_title(self, locator):
+        """
+        Retrieves and prints the title text from a page element using a locator.
+        Usage: Use for validating page titles or headers when navigation or loading new screens.
+        """
         element = self.driver.find_element(AppiumBy.XPATH, locator)
         title = element.text
         print(f"Page title is: {title}")
         return title
 
     def check_element(self, locator):
+        """
+        Checks if elements exist based on a given locator by counting the number of matching elements.
+        Difference: Uses `.find_elements()` instead of waiting for one specific element.
+        Usage: Useful for checking if any elements matching the locator exist.
+        """
         elements = self.driver.find_elements(AppiumBy.XPATH, locator)
         return len(elements) > 0
 
     def click_element(self, locator):
+        """
+        Clicks an element directly based on its locator without waiting.
+        Difference: No waiting mechanism.
+        Usage: Use when certain the element is already loaded; otherwise, consider `clickElement`.
+        """
         element = self.driver.find_element(AppiumBy.XPATH, locator)
         element.click()
         print("CTA button clicked.")
 
     def check_text_present(self, locator, expected_text):
+        """
+        Verifies if a specific text is present within an element.
+        Usage: Use to validate if an element's text content includes the expected text.
+        """
         element = self.driver.find_element(AppiumBy.XPATH, locator)
         actual_text = element.text
         return expected_text in actual_text
 
-    def validate_text_displayed(self, locator, expected_text):
-        element = self.driver.find_element(AppiumBy.XPATH, locator)
-        actual_text = element.text
-        assert actual_text == expected_text, f"Expected text '{expected_text}' but got '{actual_text}'"
-        print(f"Text '{expected_text}' is displayed correctly.")
-
-    # Method to validate if image is displayed
-    def validate_image_displayed(self, locator):
-        element = self.driver.find_element(AppiumBy.XPATH, locator)
-        is_displayed = element.is_displayed()
-        assert is_displayed, "Image is not displayed"
-        print("Image is displayed correctly.")
 
     def verifyTextInField(self, expectedText, locatorValue, locatorType="id"):
         """Verify the displayed text in an input field matches the expected text."""
@@ -232,69 +269,15 @@ class BasePage:
             self.takeScreenshot(f"VerifyTextError_{locatorType}_{locatorValue}")
             return False
         except Exception as e:
-            self.log.error(
-                f"Error verifying text in element with locatorType '{locatorType}' and locatorValue '{locatorValue}'. Error: {str(e)}")
+            self.log.error(f"Error verifying text in element with locatorType '{locatorType}' and locatorValue '{locatorValue}'. Error: {str(e)}")
             self.takeScreenshot(f"VerifyTextError_{locatorType}_{locatorValue}")
             return False
 
-    def get_scroll_coordinates(self):
-        #Returns the start and end coordinates for a scroll gesture based on screen size.
-        screen_size = self.driver.get_window_size()  # Get screen size
-        width = screen_size['width']
-        height = screen_size['height']
-        # Define start and end points for the scroll gesture
-        start_x = width / 2  # Middle of the screen horizontally
-        start_y = height * 0.8  # Near the bottom of the screen vertically
-        end_x = width / 2  # Same X coordinate for vertical swipe
-        end_y = height * 0.2  # Near the top of the screen vertically
-
-        return start_x, start_y, end_x, end_y
-
-    def scroll(self, max_swipes=10):
-        """
-        Scrolls down the screen a specified number of times.
-
-        :param max_swipes: Number of swipe attempts (default is 10).
-        """
-        start_x, start_y, end_x, end_y = self.get_scroll_coordinates()
-
-        for i in range(max_swipes):
-            print(f"Scrolling down, swipe attempt {i + 1}")
-            self.driver.swipe(start_x, start_y, end_x, end_y, 1000)
-
-    def print_allElements_withScroll(self, element_locators, max_swipes=10):
-        """
-        Prints all elements on the page, scrolling down if necessary to capture elements
-        across a long page.
-        :param element_locators: A list of locators for the elements to retrieve.
-        :param max_swipes: Number of swipe attempts (default is 10).
-        """
-        elements_found = set()  # Use a set to store unique elements
-
-        # Iterate through scroll attempts
-        for i in range(max_swipes):
-            print(f"Scroll attempt {i + 1}")
-            for locator in element_locators:
-                try:
-                    elements = self.driver.find_elements(AppiumBy.XPATH, locator)  # Adjust by locator type
-                    for element in elements:
-                        text = element.text
-                        if text not in elements_found:
-                            elements_found.add(text)
-                            print(f"Element found: {text}")
-                except Exception as e:
-                    print(f"Error finding element with locator {locator}: {e}")
-
-            # Scroll down to load more elements
-            self.scroll(1)
-            time.sleep(0.5)
-
-        if not elements_found:
-            print("No elements found on the page.")
-        else:
-            print(f"Total elements found: {len(elements_found)}")
-
     def findelement_by_uiautomator(self, uiautomator_string, timeout=10):
+        """
+        Searches for an element using a UIAutomator string within a specified timeout period.
+        If the element is found, it returns the element; otherwise, logs an error and returns None.
+        """
         try:
             cl.allureLogs(f"Trying to find element by UIAutomator: {uiautomator_string}")
             element = WebDriverWait(self.driver, timeout).until(
@@ -307,6 +290,10 @@ class BasePage:
             return None
 
     def iselement_present_by_uiautomator(self, uiautomator_string, timeout=10):
+        """
+        Check if an element is present using a UIAutomator string within a specified timeout period.
+        Returns True if the element is found, False otherwise.
+        """
         try:
             cl.allureLogs(f"Checking if element is present by UIAutomator: {uiautomator_string}")
             WebDriverWait(self.driver, timeout).until(
@@ -319,6 +306,10 @@ class BasePage:
             return False
 
     def click_element_by_uiautomator(self, uiautomator_string, timeout=10):
+        """
+        Attempts to click an element located using a UIAutomator string within the specified timeout.
+        Returns True if the click action succeeds, and logs the action; otherwise, logs an error and returns False.
+        """
         try:
             cl.allureLogs(f"Trying to click element by UIAutomator: {uiautomator_string}")
             element = WebDriverWait(self.driver, timeout).until(

@@ -14,8 +14,8 @@ class AccountPage(BasePage):
     _bellIcon = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/notification-icon.webp"]'
     _searchIcon = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/search.png"]'
 
-    # All locators as defined previously
-    _accountButton = 'new UiSelector().description("DS_SHOPshop-account-icon.webp")'  # uiautomator
+    _accountButton1 = 'new UiSelector().description("DS_SHOPshop-account-icon.webp")'  # uiautomator
+    _accountButton2 = 'new UiSelector().className("android.widget.ImageView").instance(0)' #uiautomator selector observeved newly
     _pagetitle = '//android.widget.TextView[@text="account"]'
     _yourorders = '//android.widget.TextView[@text="your orders"]'
     _cc = '//android.widget.TextView[@text="credit cards"]'
@@ -92,13 +92,15 @@ class AccountPage(BasePage):
 
 
     def ClickaccountButton(self):
+        # Clicking on the Account button
         cl.allureLogs("Attempting to click on Account Button")
-        self.iselement_present_by_uiautomator(self._accountButton)
-        self.click_element_by_uiautomator(self._accountButton)
+        self.iselement_present_by_uiautomator(self._accountButton2)
+        self.click_element_by_uiautomator(self._accountButton2)
         cl.allureLogs("Clicked on Account Button")
         self.takeScreenshot("Clicked on Account Button")
 
     def VerifyTotalSavings_Banner(self):
+        # Verify the total savings banner is shown or not
         cl.allureLogs("Verifying Total Savings Banner presence")
         elements = {
             'Is Savings banner Displayed': self._SavingsBanner,
@@ -109,6 +111,7 @@ class AccountPage(BasePage):
             self.takeScreenshot(f"Checked element presence for {name}")
 
     def VerifyandPrint_allitems_onAccountPage(self):
+        # Verify and print all items under Account Page
         cl.allureLogs("Verifying and printing all items on Account Page")
         elements = {
             'Account Page Title': self._pagetitle,
@@ -134,6 +137,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("Verifying and printing all items on Account Page")
 
     def NavOrders(self):
+        # Navigation to the My Orders page
         cl.allureLogs("Navigating to My Orders")
         self.clickElement(self._yourorders,"xpath")
         time.sleep(2)
@@ -141,6 +145,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("Navigated to My Orders")
 
     def NavCC(self):
+        # Navigation to Credit Cards Page
         cl.allureLogs("Navigating to Credit Cards")
         self.clickElement(self._cc,"xpath")
         time.sleep(2)
@@ -148,6 +153,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("Navigated to Credit Cards")
 
     def NavCoupons(self):
+        # Navigation to Coupons Page
         cl.allureLogs("Navigating to Coupons")
         self.clickElement(self._coupons,"xpath")
         time.sleep(2)
@@ -155,6 +161,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("Navigated to Coupons")
 
     def NavSavdPay(self):
+        # Navigation to Saved Payments Page
         cl.allureLogs("Navigating to Saved Payments")
         self.clickElement(self._savedpay,"xpath")
         time.sleep(2)
@@ -162,6 +169,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("Navigated to Saved Payments")
 
     def NavHelpandSupport(self):
+        # Navigation to Help & Support Page
         cl.allureLogs("Navigating to Help & Support")
         self.clickElement(self._HelpandSupport,"xpath")
         time.sleep(2)
@@ -169,6 +177,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("Navigated to Help & Support")
 
     def NavFAQ(self):
+        # Navigation to FAQ Page
         cl.allureLogs("Navigating to FAQ")
         self.clickElement(self._FAQ,"xpath")
         time.sleep(2)
@@ -176,6 +185,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("Navigated to FAQ")
 
     def VerifyandPrint_allElements_under_FAQpage(self):
+        # Verify and print all items under FAQ Page
         cl.allureLogs("Verifying and printing all elements under FAQ Page")
         elements = {
             'FAQ Search Box': self._faqsearchbox,
@@ -201,6 +211,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("Verifying and printing all elements under FAQ Page")
 
     def NavTandC(self):
+        # Navigation to Terms & Conditions Page
         cl.allureLogs("Navigating to Terms & Conditions")
         self.clickElement(self._TandC,"xpath")
         time.sleep(2)
@@ -208,6 +219,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("Navigated to Terms & Conditions")
 
     def NavPrivacyPolicy(self):
+        # Navigation to Privacy Policy Page
         cl.allureLogs("Navigating to Privacy Policy")
         self.clickElement(self._privacypolicy,"xpath")
         time.sleep(2)
@@ -215,6 +227,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("Navigated to Privacy Policy")
 
     def NavAboutUS(self):
+        # Navigation to About Us Page
         cl.allureLogs("Navigating to About Us")
         self.clickElement(self._aboutUS,"xpath")
         time.sleep(2)
@@ -222,6 +235,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("Navigated to About Us")
 
     def Savdpay_page(self, expected_title, expected_text, ctabutton):
+        # Navigation to Saved Payments Page and verify the elements present in that page
         cl.allureLogs("Verifying Saved Payments Page")
         page_title = self.get_page_title(self._sppagetitle)
         if page_title == expected_title:
@@ -250,6 +264,7 @@ class AccountPage(BasePage):
             self.driver.press_keycode(4)
 
     def VerifyandPrint_allElements_under_myOrderspage1(self):
+        # Verify and print all items under My Orders Page (Xpath locators used here)
         cl.allureLogs("Verifying and printing all elements under My Orders Page (Part 1)")
         elements = {
             'Orders Page Search Box': self._ordersSearchBox,
@@ -262,6 +277,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("My Orders Page Part 1")
 
     def VerifyandPrint_allElements_under_myOrderspage2(self):
+        # Verify and print all items under My Orders Page (UIAutomator locators used here)
         cl.allureLogs("Verifying and printing all elements under My Orders Page (Part 2)")
         elements = {
             'Orders Page Search Icon': self._ordersSearchIcon,
@@ -272,6 +288,7 @@ class AccountPage(BasePage):
 
 
     def VerifyandPrint_allElements_under_CCspage(self):
+        # Verify and print all items under Credit Cards Page
         cl.allureLogs("Verifying and printing all elements under Credit Cards Page")
         elements = {
             'CC Page Title': self._CCpagetitle,
@@ -283,6 +300,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("Verifying and printing all elements under Credit Cards Page")
 
     def NavProfilePage(self):
+        # Navigation to Profile Page and verify the elements present in that page
         cl.allureLogs("Navigating to Profile Page")
         self.clickElement(self._editIcon,"xpath")
         time.sleep(2)
@@ -290,6 +308,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("Navigated to Profile Page")
 
     def VerifyandPrintallElements_underProfilePage1(self):
+        # Verify and print all items under My Details Page (UIAutomator locators used here)
         cl.allureLogs("Verifying and printing all elements under Profile Page (Part 1)")
         elements = {
             'My Details Page Text': self._mydetailsPage,
@@ -303,6 +322,7 @@ class AccountPage(BasePage):
         self.takeScreenshot("Profile Page Part 1")
 
     def VerifyandPrintallElements_underProfilePage2(self):
+        # Verify and print all items under My Details Page (UIAutomator locators used here)
         cl.allureLogs("Verifying and printing all elements under Profile Page (Part 2)")
         elements = {
             'Profile Picture': self._profilePic,
@@ -314,6 +334,7 @@ class AccountPage(BasePage):
 
 
     def VerifyandPrint_allElements_under_CouponsPage(self):
+        # Verify and print all items under Coupons Page
         cl.allureLogs("Verifying and printing all elements under Coupons Page")
         elements = {
             'Coupon Page Title': self._CouponsPageTitle,

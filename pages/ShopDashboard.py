@@ -45,12 +45,15 @@ class ShopDashboard(BasePage):
     _accountpage_restcategories5 = '//android.widget.TextView[@text="shopping"]'
 
     def NavtoShopDashBoard(self):
+        # Navigation to Shop Dashboard
         self.clickElement(self._ShopButton, "xpath")
         time.sleep(2)
         cl.allureLogs("Navigated to Shop Dashboard")
         self.takeScreenshot("Navigated to Shop Dashboard")
 
     def print_allitems_onDashBoard(self):
+        # print the list of all items present on the Vi Shop Dashboard
+        cl.allureLogs("Checking all icons on the Vi Shop Dashboard")
         elements = {
             'Vi Home Button': self._viAppHomeButton,
             'Deals': self._dealsButton,
@@ -67,6 +70,8 @@ class ShopDashboard(BasePage):
         self.takeScreenshot("Print all Icons on Shop Dashboard")
 
     def ShopDashboard_elements(self):
+        # print the options present on VI Shop Dashboard
+        cl.allureLogs("Checking all elements on the Vi Shop Dashboard")
         elements = {
             'Shop by Category': self._accountpage_shopbycategory,
             'Selling Fast': self._accountpage_sellingfast,
@@ -80,12 +85,16 @@ class ShopDashboard(BasePage):
         self.takeScreenshot("Print all elements on Shop Dashboard")
 
     def NavtoDeals(self):
+        # Navigation to Deals page
+        cl.allureLogs("Navigating to Deals page")
         self.clickElement(self._dealsButton, "xpath")
         time.sleep(2)
         cl.allureLogs("Navigated to Deals Page")
         self.takeScreenshot("Navigated to Deals Page")
 
     def print_allitems_onDealsPage(self):
+        # print "All items on Deals Page"
+        cl.allureLogs("Checking All items on Deals Page")
         elements = {
             'Deals Back Button': self._backButton,
             'Deals Page Title': self._deals_Pagetitle,
@@ -97,12 +106,17 @@ class ShopDashboard(BasePage):
         self.takeScreenshot("Print all elements on Deals Page")
 
     def NavtoExplore(self):
+        # Navigation to Explore page
+        cl.allureLogs("Navigating to Explore Page")
         self.clickElement(self._exploreButton, "xpath")
         time.sleep(2)
         cl.allureLogs("Navigated to Explore Page")
         self.takeScreenshot("Navigated to Explore Page")
 
     def print_allitems_onExplorePage(self):
+        # print "All items on Explore Page"
+        cl.allureLogs("Checking All items on Explore Page")
+
         elements = {
             'Explore Page Title': self._explore_pagetitle,
             'Explore Search Icon': self._searchicon,
@@ -114,12 +128,16 @@ class ShopDashboard(BasePage):
         self.takeScreenshot("Print all elements on Explore Page")
 
     def NavtoMyOrders(self):
+        # Navigation to My Orders page
+        cl.allureLogs("Navigating to My Orders Page")
         self.clickElement(self._myOrdersButton, "xpath")
         time.sleep(2)
         cl.allureLogs("Navigated to My Orders Page")
         self.takeScreenshot("Navigated to My Orders Page")
 
     def print_allitems_onMyOrders(self):
+        # print "All items on My Orders Page"
+        cl.allureLogs("Checking All items on My Orders Page")
         elements = {
             'My Orders Back Button': self._backButton,
             'My Orders Page Title': self._myorders_pagetitle,

@@ -2,6 +2,9 @@ import random
 import time
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.common import TimeoutException
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.actions.action_builder import ActionBuilder
+from selenium.webdriver.common.actions.pointer_input import PointerInput
 
 from base.BasePage import BasePage
 import utils.CustomLogger as cl
@@ -13,7 +16,7 @@ class SearchPage(BasePage):
         super().__init__(driver)
         self.driver = driver
 
-    _searchicon = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/search.png"]'  # xpath
+    _searchicon1 = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/search.png"]'  # xpath
     _popularcategories = '//android.widget.TextView[@text="popular categories"]'
     _recentlyviewed = '//android.widget.TextView[@text="recently viewed"]'
     _recentlyviewedseeall = '//android.widget.TextView[@text="see all"]'
@@ -25,6 +28,8 @@ class SearchPage(BasePage):
     _recentsearches = '//android.widget.TextView[@text="recent searches"]'
     _searchBox = '//android.widget.EditText[@text="Search for products,brands etc"]'
     _searchEdit = 'android.widget.EditText'  # class
+    _MyntraSearchloc1 = "//android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup"
+    _MyntraSearchloc3 = "//android.widget.FrameLayout[@resource-id='android:id/content']//android.widget.ScrollView//android.widget.ImageView"
 
     # Categories
     _CC = '//android.widget.TextView[@text="credit cards"]'
@@ -40,12 +45,16 @@ class SearchPage(BasePage):
     _ShoppingIcon = 'new UiSelector().className("android.widget.ImageView").instance(4)'
     _TravelIcon = 'new UiSelector().className("android.widget.ImageView").instance(5)'
     _SearchCloseIcon = 'new UiSelector().className("android.widget.ImageView").instance(1)'
+    _SearchIcon2 = 'new UiSelector().className("android.widget.ImageView").instance(1)'
+    _MyntraSearchloc2 = 'new UiSelector().className("android.view.ViewGroup").instance(34)'
+
 
     def NavtoSearch(self):
-        self.clickElement(self._searchicon, "xpath")
+        self.click_element_by_uiautomator(self._SearchIcon2)
         time.sleep(1)
         cl.allureLogs("Navigated to Search Page")
         self.takeScreenshot("Navigated to Search Page")
+
 
     def VerifyandPrint_allitems_onSearchPage1(self):
         cl.allureLogs("Starting verification of all items on Search Page - Part 1")
@@ -87,7 +96,7 @@ class SearchPage(BasePage):
 
     def SearchProduct(self, searchText):
         self.sendText(searchText, self._searchBox, "xpath")
-        cl.allureLogs("Entered Product ID for search")
+        cl.allureLogs(f"Entered Product ID for search: {searchText}")
         self.takeScreenshot("Search Product")
 
     def verifySearchDisplayedText(self, expected_text):
@@ -173,19 +182,86 @@ class SearchPage(BasePage):
         self.takeScreenshot("Search Results Printed")
         return displayed_groups
 
-    def click_Oneofthe_searchResults(self, search_text):
-        """Uses print_searchresults to find element groups and clicks one randomly based on the search text."""
-        displayed_groups = self.print_searchresults(search_text)
 
-        if displayed_groups:
-            random_group = random.choice(displayed_groups)
-            random_group[0].click()  # Click the group container
-            group_text = random_group[2][0].text if random_group[2] else "[No Text]"
-            print(f"Clicked on a random element group with text: '{group_text}'")
-            cl.allureLogs(f"Clicked on a random element group with text: '{group_text}'")
+    def click_on_search_results(self):
+        self.click_element_by_uiautomator(self._MyntraSearchloc2)
+        time.sleep(5)
+        self.takeScreenshot("Clicked on search results")
+        print("Successfully clicked on the search results element.")
+        cl.allureLogs("Successfully clicked on the search results element.")
+
+    def touch_click_element(self, x, y):
+        """Simulates a touch click at specific coordinates."""
+        try:
+            actions = ActionChains(self.driver)
+            touch_input = PointerInput("touch", "finger")  # Directly specify 'touch' and a unique pointer name
+            actions.w3c_actions = ActionBuilder(self.driver, mouse=touch_input)
+
+            # Move to location, press down, pause, and release for touch action
+            actions.w3c_actions.pointer_action.move_to_location(x, y)
+            actions.w3c_actions.pointer_action.pointer_down()
+            actions.w3c_actions.pointer_action.pause(0.1)
+            actions.w3c_actions.pointer_action.release()
+
+            # Perform the actions
+            actions.perform()
+
+            cl.allureLogs(f"Touched at location ({x}, {y}) successfully.")
+            self.log.info(f"Touched at location ({x}, {y}) successfully.")
+        except Exception as e:
+            self.log.error(f"Failed to touch at location ({x}, {y}). Error: {str(e)}")
+            cl.allureLogs(f"Failed to touch at location ({x}, {y}). Error: {str(e)}")
+            self.takeScreenshot(f"TouchClickError_{x}_{y}")
+            assert False, f"Failed to perform touch click at ({x}, {y})"
+
+    def click_on_first_search_result(self):
+        elements = self.driver.find_elements(AppiumBy.XPATH, self._MyntraSearchloc3)
+        if elements:
+            elements[0].click()
+            print("Clicked on the first search result.")
         else:
-            print("No element groups found to click.")
-            cl.allureLogs("No element groups found to click.")
+            print("Element not found in DOM.")
+        time.sleep(5)
+        self.takeScreenshot("taking screenshot after navigation")
 
-    def click_element_with_bounds(self, bounds):
-        self.click_by_bounds(bounds)
+    def tap_above_middle(self):
+        """Tap dynamically at the top and slightly above the middle of the screen."""
+        try:
+            # Get screen dimensions
+            screen_width = self.driver.get_window_size()["width"]
+            screen_height = self.driver.get_window_size()["height"]
+
+            # Coordinates for top and slightly above middle taps
+            top_y = int(screen_height * 0.1)  # 10% from the top of the screen
+            middle_y = int(screen_height * 0.4)  # 40% from the top of the screen
+            x = int(screen_width / 2)  # Center of the screen horizontally
+
+            actions = ActionChains(self.driver)
+
+            # Tap at top
+            actions.tap(None, x, top_y).perform()
+            cl.allureLogs(f"Tapped at top of screen at ({x}, {top_y}).")
+            self.log.info(f"Tapped at top of screen at ({x}, {top_y}).")
+
+            # Tap slightly above the middle of the screen
+            actions.tap(None, x, middle_y).perform()
+            cl.allureLogs(f"Tapped above middle of screen at ({x}, {middle_y}).")
+            self.log.info(f"Tapped above middle of screen at ({x}, {middle_y}).")
+
+        except Exception as e:
+            self.log.error(f"Failed to perform tap action. Error: {str(e)}")
+            cl.allureLogs(f"Failed to perform tap action. Error: {str(e)}")
+            self.takeScreenshot("TapAboveMiddleError")
+            assert False, f"Failed to perform tap action"
+
+    def tap_middle_above_screen(self):
+
+        screen_size = self.driver.get_window_size()
+        screen_width = screen_size['width']
+        screen_height = screen_size['height']
+
+        x = screen_width / 2
+        y = screen_height * 0.4
+
+        action = ActionChains(self)
+        action.move_by_offset(x, y).click().perform()

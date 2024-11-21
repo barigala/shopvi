@@ -9,6 +9,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 # Import the Driver class after modifying sys.path
 from base.DriverClass import Driver
+from config.test_data import MOBILE_NUMBER, OTP_CODE, SEARCH_KEYWORDS
 
 ALLURE_RESULTS_PATH = 'D:\\PyProjects\\shopvipytest\\tests\\reports\\allurereports'
 

@@ -1,5 +1,4 @@
 import time
-
 import pytest
 import unittest
 from pages.NavtoShop import NavtoShop
@@ -9,6 +8,7 @@ from pages.Search import SearchPage
 from base.DriverClass import Driver
 import utils.CustomLogger as cl
 import allure
+from config.test_data import MOBILE_NUMBER, OTP_CODE, SEARCH_KEYWORDS
 
 @pytest.mark.usefixtures("beforeClass", "beforeMethod")
 class ShopTest(unittest.TestCase):
@@ -36,10 +36,10 @@ class ShopTest(unittest.TestCase):
 
     @pytest.mark.order(3)
     def test_input_valid_mobile_number(self):
-        mobile_number = "7507233095"
+        #mobile_number = "7507233095"
         print("Now Running test_input_valid_mobile_")
-        cl.allureLogs("Inputting valid mobile number: {}".format(mobile_number))
-        self.nav_to_shop.inputValidMobileNumber(mobile_number)
+        cl.allureLogs("Inputting valid mobile number: {}".format(MOBILE_NUMBER))
+        self.nav_to_shop.inputValidMobileNumber(MOBILE_NUMBER)
         cl.allureLogs("Inputting valid mobile number successfully completed")
 
     @pytest.mark.order(4)
@@ -51,10 +51,10 @@ class ShopTest(unittest.TestCase):
 
     @pytest.mark.order(5)
     def test_input_otp(self):
-        otp = "1234"
+        #otp = "1234"
         print("Now Running test_input_otp")
-        cl.allureLogs("Inputting OTP: {}".format(otp))
-        self.nav_to_shop.inputOTP(otp)
+        cl.allureLogs("Inputting OTP: {}".format(OTP_CODE))
+        self.nav_to_shop.inputOTP(OTP_CODE)
         cl.allureLogs("Inputting OTP successfully completed")
 
     @pytest.mark.order(6)
@@ -188,22 +188,41 @@ class ShopTest(unittest.TestCase):
 
     @pytest.mark.order(21)
     def test_Inputsearch(self):
-        searchText = "myntra"
         print("Now Running test_Inputsearch")
         cl.allureLogs("Verifying Search Page")
-        self.search_page.SearchProduct(searchText)
+        self.search_page.SearchProduct(SEARCH_KEYWORDS[1])
         cl.allureLogs("Inputting valid Product ID successfully completed")
         print("Validating Input Search Text")
         cl.allureLogs("Verify the input text")
-        assert self.search_page.verifySearchDisplayedText(searchText)
+        assert self.search_page.verifySearchDisplayedText(SEARCH_KEYWORDS[1])
         cl.allureLogs("Input Search Text validated successfully")
 
     @pytest.mark.order(22)
     def test_ClickonASearchResult(self):
-        element = 'new UiSelector().className("android.widget.ImageView").instance(2)'
-        self.search_page.click_element_by_uiautomator(element)
-        cl.allureLogs("Clicked on Search Result")
-        print("Navigating to Product Details Page")
+        #self.search_page.click_on_first_search_result()
+        #cl.allureLogs("Clicked on Search Result")
+        #print("Navigating to Product Details Page")
+
+        x_coordinate = 470
+        y_coordinate = 805
+
+        print("Now Running test_TouchClickOnSearchResult")
+        cl.allureLogs("Testing Touch Click on Search Result Element")
+        time.sleep(5)
+
+        # Perform the touch click using the method defined in SearchPage
+        #self.search_page.touch_click_element(x_coordinate, y_coordinate)
+        self.search_page.tap_middle_above_screen()
+        self.search_page.tap_middle_above_screen()
+        self.search_page.tap_middle_above_screen()
+        self.search_page.tap_middle_above_screen()
+
+        time.sleep(5)
+        # Add assertions as needed for post-click validation
+        # Example: Verifying if expected element appears after touch click
+        #assert self.search_page.verifySearchDisplayedText("Expected Text"), "Expected text not displayed after touch click."
+        cl.allureLogs("Touch click action completed successfully")
+
 
 
 
