@@ -1,5 +1,0 @@
-Before Method
-TC9: Validate Saved Payments page
-Page title is: manage payment options
-CTA button clicked.
-After Method

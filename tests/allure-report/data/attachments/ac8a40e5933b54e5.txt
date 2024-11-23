@@ -1,3 +1,0 @@
-Before Method
-TC7: Verify all the sections available in Accounts Page
-After Method

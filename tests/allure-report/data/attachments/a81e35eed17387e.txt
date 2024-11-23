@@ -1,6 +1,0 @@
-Before Method
-TC15: Verify Profile page
-Element found: Profile Picture
-Element found: Mobile Number Field
-Element found: Email ID Field
-After Method
