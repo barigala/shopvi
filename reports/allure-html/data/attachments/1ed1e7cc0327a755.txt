@@ -1,3 +1,0 @@
-INFO     ShopVI:BasePage.py:54 Element found with locatorType 'xpath' and locatorValue '//android.widget.TextView[@text="saved payments"]'
-INFO     ShopVI:BasePage.py:67 Clicked element with locatorType 'xpath' and locatorValue '//android.widget.TextView[@text="saved payments"]'
-INFO     ShopVI:BasePage.py:175 Screenshot taken and saved at '../screenshot/021_Navigated to Saved Payments_22_10_2024_19_00_20.png'

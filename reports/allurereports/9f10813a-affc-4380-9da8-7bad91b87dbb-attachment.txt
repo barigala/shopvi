@@ -1,3 +1,0 @@
-Before Method
-Validating Input Search Text
-After Method

@@ -1,0 +1,2 @@
+INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\015_Clicked on Account Button_08_11_2024_16_23_34.png'
+INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\016_Verifying and printing all items on Account Page_08_11_2024_16_23_40.png'

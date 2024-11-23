@@ -1,3 +1,0 @@
-INFO     ShopVI:BasePage.py:54 Element found with locatorType 'text' and locatorValue 'send OTP'
-INFO     ShopVI:BasePage.py:67 Clicked element with locatorType 'text' and locatorValue 'send OTP'
-INFO     ShopVI:BasePage.py:175 Screenshot taken and saved at '../screenshot/004_Clicked on OTP button_22_10_2024_18_58_20.png'

@@ -338,4 +338,3 @@ class BasePage:
             except Exception as e:
                 cl.allureLogs(f"Error finding element '{element_name}' with UIAutomator selector: {uiautomator_string}. Error: {str(e)}")
                 print(f"Error finding element '{element_name}' with UIAutomator selector: {uiautomator_string}. Error: {str(e)}")
-

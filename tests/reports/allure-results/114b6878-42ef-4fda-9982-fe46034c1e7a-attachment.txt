@@ -1,3 +1,0 @@
-Before Method
-TC14: Verify Coupons page
-After Method

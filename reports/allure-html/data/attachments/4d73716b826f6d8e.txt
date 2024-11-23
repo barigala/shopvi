@@ -1,7 +1,0 @@
-Before Method
-TC12: Verify My Orders page
-my Orders Page Title: True
-my Orders Page Back Arrow: True
-my Orders Page Search Box: True
-my Orders Page Search Icon: True
-After Method

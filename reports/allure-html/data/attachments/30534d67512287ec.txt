@@ -1,3 +1,0 @@
-Before Method
-TC1: Navigate to Vi Shop
-After Method

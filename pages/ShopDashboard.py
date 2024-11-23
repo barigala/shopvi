@@ -9,25 +9,40 @@ class ShopDashboard(BasePage):
         self.driver = driver
 
     # Locators values in Vi Shop dashboard
-    _ShopButton = '//android.widget.TextView[@text="shop"]'  # xpath
     _viAppHomeButton = '//android.widget.TextView[@text="home"]'  # xpath
     _dealsButton = '//android.widget.TextView[@text="deals"]'  # xpath
     _exploreButton = '//android.widget.TextView[@text="explore"]'  # xpath
     _myOrdersButton = '//android.widget.TextView[@text="my orders"]'  # xpath
-    _vihomeButton = '//android.widget.TextView[@text="home"]'  # xpath
+    _viShopButton = '//android.widget.TextView[@text="shop"]'  # xpath
+
+    _deals_Pagetitle = '//android.widget.TextView[@text="offers"]'  # xpath
+
+    _myorders_pagetitle = '//android.widget.TextView[@text="your orders"]'  # xpath
+    _myorders_SearchBox = '//android.widget.EditText[@text="search for orders..."]'  # xpath
+
     _accountsButton = '//android.view.ViewGroup[@content-desc="DS_SHOPshop-account-icon.webp"]'  # xpath
     _searchicon = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/search.png"]'  # xpath
     _cartIcon = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/Cart.webp"]'  # xpath
+
+    _accountsButton1 = 'new UiSelector().className("android.widget.ImageView").instance(0)'
+    _db_myorders_searchicon = 'new UiSelector().className("android.widget.ImageView").instance(1)'
+    _cartIcon1 = 'new UiSelector().className("android.widget.ImageView").instance(2)'
+
     _backButton = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/back-arrow.webp"]'  # xpath
-    _deals_Pagetitle = '//android.widget.TextView[@text="deals"]'  # xpath
-    _explore_pagetitle = '//android.widget.TextView[@text="explore"]'  # xpath
-    _myorders_pagetitle = '//android.widget.TextView[@text="your orders"]'  # xpath
-    _myorders_SearchBox = '//android.widget.EditText[@text="search for orders..."]'  # xpath
-    _accountpage_shopbycategory = '//android.widget.TextView[@text="shop by category"]'  # xpath
-    _accountpage_sellingfast = '//android.widget.TextView[@text="selling fast"]'  # xpath
-    _accountpage_sellingfast_seeallBTN = '(//android.widget.TextView[@text="see all"])[1]'  # xpath
-    _accountpage_CC = '//android.widget.TextView[@text="credit cards"]'  # xpath
-    _accountpage_CC_seeallBTN = '(//android.widget.TextView[@text="see all"])[2]'
+    _deals_myorders_backButton = 'new UiSelector().className("android.widget.ImageView").instance(1)'
+
+    #explore page
+    _explore_pagetitle = '//android.widget.TextView[@text="our store"]'  # xpath
+    _explore_CartIcon = 'new UiSelector().className("android.widget.ImageView").instance(1)'
+    _explore_SearchIcon = 'new UiSelector().className("android.widget.ImageView").instance(0)'
+
+    _sdb_shopbycategory = '//android.widget.TextView[@text="shop by category"]'  # xpath
+    _sdb_sellingfast = '//android.widget.TextView[@text="selling fast"]'  # xpath
+    _sdb_sellingfast_seeallBTN = '(//android.widget.TextView[@text="see all"])[1]'  # xpath
+    _sdb_CC = '//android.widget.TextView[@text="credit cards"]'  # xpath
+    _sdb_CC_seeallBTN = '(//android.widget.TextView[@text="see all"])[2]'
+
+
     _accountpage_recentlyviewed = '//android.widget.TextView[@text="recently viewed"]'
     _accountpage_recentlyviewed_seeallBTN = '//android.widget.TextView[@text="see all"]'
     _accountpage_bigsavings_section = '//android.widget.TextView[@text="big savings"]'
@@ -46,38 +61,62 @@ class ShopDashboard(BasePage):
 
     def NavtoShopDashBoard(self):
         # Navigation to Shop Dashboard
-        self.clickElement(self._ShopButton, "xpath")
+        self.clickElement(self._viShopButton, "xpath")
         time.sleep(2)
         cl.allureLogs("Navigated to Shop Dashboard")
         self.takeScreenshot("Navigated to Shop Dashboard")
 
-    def print_allitems_onDashBoard(self):
-        # print the list of all items present on the Vi Shop Dashboard
-        cl.allureLogs("Checking all icons on the Vi Shop Dashboard")
-        elements = {
-            'Vi Home Button': self._viAppHomeButton,
-            'Deals': self._dealsButton,
-            'Explore': self._exploreButton,
-            'My Orders': self._myOrdersButton,
-            'Vi Home': self._vihomeButton,
-            'Accounts': self._accountsButton,
-            'Search Icon': self._searchicon,
-            'Cart Icon': self._cartIcon,
-        }
-        for name, locator in elements.items():
-            element_text = self.check_element(locator)
-            cl.allureLogs(f"{name}: {element_text}")
-        self.takeScreenshot("Print all Icons on Shop Dashboard")
+    def print_allitems_onDashBoard1(self):
+            # print the list of all items present on the Vi Shop Dashboard
+            cl.allureLogs("Checking all icons on the Vi Shop Dashboard")
+            elements = {
+                'Vi App Home Button': self._viShopButton,
+                'Deals': self._dealsButton,
+                'Explore': self._exploreButton,
+                'My Orders': self._myOrdersButton,
+                'Vi Home': self._viShopButton,
+            }
+            for name, locator in elements.items():
+                element_text = self.check_element(locator)
+                cl.allureLogs(f"{name}: {element_text}")
+            self.takeScreenshot("Print all elements on Shop Dashboard")
+
+    def print_allitems_onDashBoard2(self):
+            # print the list of all items present on the Vi Shop Dashboard
+            cl.allureLogs("Checking all icons on the Vi Shop Dashboard")
+            elements = {
+                'Accounts': self._accountsButton,
+                'Search Icon': self._searchicon,
+                'Cart Icon': self._cartIcon,
+            }
+            for name, locator in elements.items():
+                element_text = self.check_element(locator)
+                cl.allureLogs(f"{name}: {element_text}")
+            self.takeScreenshot("Print all Elements on Shop Dashboard")
+
+    def print_allitems_onDashBoard2Prod(self):
+            # Verify and print all items under My Orders Page (Ui automator locators used here)
+            cl.allureLogs("Verifying and printing all elements under My Orders Page (Part 2 Prod)")
+            elements = {
+                'Accounts': self._accountsButton1,
+                'Search Icon': self._db_myorders_searchicon,
+                'Cart Icon': self._cartIcon1,
+            }
+            for name, locator in elements.items():
+                element = self.findelement_by_uiautomator(locator)
+                element_text = element.text if element else "Element not found"
+                cl.allureLogs(f"{name}: {element_text}")
+            self.takeScreenshot("Print all Elements on Shop Dashboard")
 
     def ShopDashboard_elements(self):
         # print the options present on VI Shop Dashboard
         cl.allureLogs("Checking all elements on the Vi Shop Dashboard")
         elements = {
-            'Shop by Category': self._accountpage_shopbycategory,
-            'Selling Fast': self._accountpage_sellingfast,
-            'Selling Fast see all button': self._accountpage_sellingfast_seeallBTN,
-            'Credit cards section': self._accountpage_CC,
-            'Credit cards section see all button': self._accountpage_CC_seeallBTN,
+            'Shop by Category': self._sdb_shopbycategory,
+            'Selling Fast': self._sdb_sellingfast,
+            'Selling Fast see all button': self._sdb_sellingfast_seeallBTN,
+            'Credit cards section': self._sdb_CC,
+            'Credit cards section see all button': self._sdb_CC_seeallBTN,
         }
         for name, locator in elements.items():
             element_text = self.check_element(locator)

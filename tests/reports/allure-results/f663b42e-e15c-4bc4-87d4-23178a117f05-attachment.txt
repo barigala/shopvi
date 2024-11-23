@@ -1,6 +1,0 @@
-INFO     ShopVI:BasePage.py:61 Element found with locatorType 'xpath' and locatorValue '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/search.png"]'
-INFO     ShopVI:BasePage.py:74 Clicked element with locatorType 'xpath' and locatorValue '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/search.png"]'
-INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\032_Navigated to Search Page_08_11_2024_16_24_32.png'
-INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\033_Verify all items on Search Page - Part 1_08_11_2024_16_24_33.png'
-INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\034_Verify category icons on Search Page_08_11_2024_16_24_39.png'
-INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\035_Categories Icons_08_11_2024_16_24_42.png'

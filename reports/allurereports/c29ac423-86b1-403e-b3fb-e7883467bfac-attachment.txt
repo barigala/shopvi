@@ -1,3 +1,0 @@
-INFO     ShopVI:BasePage.py:55 Element found with locatorType 'text' and locatorValue 'NONE OF THE ABOVE'
-INFO     ShopVI:BasePage.py:68 Clicked element with locatorType 'text' and locatorValue 'NONE OF THE ABOVE'
-INFO     ShopVI:BasePage.py:177 Screenshot taken and saved at '../screenshot/002_Clicked on Dialog Box_25_10_2024_18_35_09.png'

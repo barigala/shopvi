@@ -1,8 +1,0 @@
-Before Method
-TC9: Validate Saved Payments page
-Page title is: manage payment options
-Page title 'manage payment options' matches the expected title.
-Expected text 'nothing saved yet' found on the page.
-CTA button found. Clicking CTA button.
-CTA button clicked.
-After Method

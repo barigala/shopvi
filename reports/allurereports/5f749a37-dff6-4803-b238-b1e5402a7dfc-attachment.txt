@@ -1,4 +1,0 @@
-Before Method
-TC10: Verify the Savings Banner
-Is Savings banner Displayed: True
-After Method

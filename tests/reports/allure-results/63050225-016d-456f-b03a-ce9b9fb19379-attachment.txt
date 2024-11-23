@@ -1,4 +1,0 @@
-INFO     ShopVI:BasePage.py:61 Element found with locatorType 'xpath' and locatorValue '//android.widget.TextView[@text="coupons"]'
-INFO     ShopVI:BasePage.py:74 Clicked element with locatorType 'xpath' and locatorValue '//android.widget.TextView[@text="coupons"]'
-INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\027_Navigated to Coupons_08_11_2024_16_24_15.png'
-INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\028_Verifying and printing all elements under Coupons Page_08_11_2024_16_24_18.png'

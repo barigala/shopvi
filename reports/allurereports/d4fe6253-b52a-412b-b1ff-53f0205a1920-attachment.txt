@@ -1,6 +1,0 @@
-Before Method
-TC3: Verify the navigation and all the elements present in Deals Page
-Deals Back Button: True
-Deals Page Title: True
-Deals Cart Icon: True
-After Method

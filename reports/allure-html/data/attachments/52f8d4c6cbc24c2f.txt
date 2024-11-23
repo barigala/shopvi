@@ -1,3 +1,0 @@
-INFO     ShopVI:BasePage.py:54 Element found with locatorType 'text' and locatorValue 'login with OTP'
-INFO     ShopVI:BasePage.py:67 Clicked element with locatorType 'text' and locatorValue 'login with OTP'
-INFO     ShopVI:BasePage.py:175 Screenshot taken and saved at '../screenshot/006_Clicked on Login with OTP button_22_10_2024_18_58_32.png'

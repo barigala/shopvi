@@ -1,3 +1,0 @@
-Before Method
-Now Running test_click_dialog_box
-After Method

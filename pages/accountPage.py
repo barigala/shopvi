@@ -10,12 +10,18 @@ class AccountPage(BasePage):
         self.driver = driver
 
     # Common locators across all accounts pages sections
-    _backarrow = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/back-arrow.webp"]'
     _bellIcon = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/notification-icon.webp"]'
+    _bellIcon1 = 'new UiSelector().className("android.widget.ImageView").instance(1)'
+
+    _backarrow = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/back-arrow.webp"]'
+    _backicon = 'new UiSelector().className("android.widget.ImageView").instance(0)'
+
     _searchIcon = '//android.view.ViewGroup[@content-desc="DS_SHOP_https://vishop.myvi.in/documents/35161/38258/search.png"]'
+    _searchIcon1 = 'new UiSelector().className("android.widget.ImageView").instance(2)'
 
     _accountButton1 = 'new UiSelector().description("DS_SHOPshop-account-icon.webp")'  # uiautomator
     _accountButton2 = 'new UiSelector().className("android.widget.ImageView").instance(0)' #uiautomator selector observeved newly
+
     _pagetitle = '//android.widget.TextView[@text="account"]'
     _yourorders = '//android.widget.TextView[@text="your orders"]'
     _cc = '//android.widget.TextView[@text="credit cards"]'
@@ -87,8 +93,6 @@ class AccountPage(BasePage):
     _faqQ8 = '//android.widget.TextView[@text="What all payment methods can I use?"]'
     _faqQ9 = '//android.widget.TextView[@text="How do I claim a refund?"]'
     _faqQ10 = '//android.widget.TextView[@text="How can I cancel or exchange a digital product?"]'
-
-
 
 
     def ClickaccountButton(self):
@@ -353,5 +357,3 @@ class AccountPage(BasePage):
             element_text = self.check_element(locator)
             cl.allureLogs(f"{name}: {element_text}")
         self.takeScreenshot("Verifying and printing all elements under Coupons Page")
-
-

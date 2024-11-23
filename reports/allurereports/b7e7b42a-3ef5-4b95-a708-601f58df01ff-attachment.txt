@@ -1,8 +1,0 @@
-Before Method
-TC6: Verify all the options available in Shop Dashboard
-Shop by Category: True
-Selling Fast: True
-Selling Fast see all button: True
-Credit cards section: True
-Credit cards section see all button: True
-After Method

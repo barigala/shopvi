@@ -21,6 +21,9 @@ echo HTML Report: %HTML_REPORT%
 echo Allure Report Directory: %ALLURE_REPORT%
 echo Allure Single File Report: %ALLURE_SINGLE_FILE_REPORT%
 
+rem Grant notification permissions to the app
+adb shell pm grant com.mventus.selfcare.activity android.permission.POST_NOTIFICATIONS
+
 rem Clean up old results and reports
 if exist %ALLURE_RESULTS% ( rmdir /s /q %ALLURE_RESULTS% )
 if exist %ALLURE_REPORT% ( rmdir /s /q %ALLURE_REPORT% )
@@ -29,7 +32,10 @@ rem Create allure-results directory if it doesn't exist
 if not exist %ALLURE_RESULTS% ( mkdir %ALLURE_RESULTS% )
 
 rem Run pytest with Allure and HTML reports
-pytest -v --alluredir=%ALLURE_RESULTS% --html=%HTML_REPORT% --self-contained-html
+rem pytest -v --alluredir=%ALLURE_RESULTS% --html=%HTML_REPORT% --self-contained-html
+
+rem Run pytest with a specific marker (e.g., "prod" or "sanity")
+pytest -v -m "prod" --alluredir=%ALLURE_RESULTS% --html=%HTML_REPORT% --self-contained-html
 
 rem Generate Allure report with clean option
 allure generate --clean %ALLURE_RESULTS% -o %ALLURE_REPORT%

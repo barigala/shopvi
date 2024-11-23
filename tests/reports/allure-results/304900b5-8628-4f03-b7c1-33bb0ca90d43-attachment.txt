@@ -1,4 +1,0 @@
-INFO     ShopVI:BasePage.py:61 Element found with locatorType 'xpath' and locatorValue '//android.widget.TextView[@text="deals"]'
-INFO     ShopVI:BasePage.py:74 Clicked element with locatorType 'xpath' and locatorValue '//android.widget.TextView[@text="deals"]'
-INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\009_Navigated to Deals Page_08_11_2024_16_23_12.png'
-INFO     ShopVI:BasePage.py:183 Screenshot taken and saved at './screenshot\010_Print all elements on Deals Page_08_11_2024_16_23_15.png'

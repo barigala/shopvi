@@ -1,5 +1,6 @@
+import os
 import  unittest
-from tests.ShopTEST import ShopTest
+from tests.shopTEST import ShopTest
 
 shop_tests = unittest.TestLoader().loadTestsFromTestCase(ShopTest)
 
